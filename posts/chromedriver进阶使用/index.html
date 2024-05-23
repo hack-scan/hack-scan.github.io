@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-us">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Selenium——进阶使用 - My New Hugo Site</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="进阶使用执行：JS代码，模拟按键组合键、切换窗口总结。" /><meta name="keywords" content='工具, Python, Selenium' />
+  <meta itemprop="name" content="Selenium——进阶使用">
+  <meta itemprop="description" content="进阶使用执行：JS代码，模拟按键组合键、切换窗口总结。">
+  <meta itemprop="datePublished" content="2023-06-04T17:00:07+08:00">
+  <meta itemprop="dateModified" content="2023-06-04T17:00:07+08:00">
+  <meta itemprop="wordCount" content="197">
+  <meta itemprop="keywords" content="工具,Python,Selenium"><meta property="og:url" content="https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Selenium——进阶使用">
+  <meta property="og:description" content="进阶使用执行：JS代码，模拟按键组合键、切换窗口总结。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-06-04T17:00:07+08:00">
+    <meta property="article:modified_time" content="2023-06-04T17:00:07+08:00">
+    <meta property="article:tag" content="工具">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Selenium">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Selenium——进阶使用">
+  <meta name="twitter:description" content="进阶使用执行：JS代码，模拟按键组合键、切换窗口总结。">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" /><link rel="prev" href="https://hack-scan.github.io/posts/chromedriver%E5%AE%89%E8%A3%85/" /><link rel="next" href="https://hack-scan.github.io/posts/%E5%BD%A2%E6%80%81%E5%AD%A6%E6%96%B9%E6%B3%95%E6%A3%80%E6%B5%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Selenium——进阶使用",
+    "inLanguage": "en-us",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/hack-scan.github.io\/posts\/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8\/"
+    },"genre": "posts","keywords": "工具, Python, Selenium","wordcount":  197 ,
+    "url": "https:\/\/hack-scan.github.io\/posts\/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8\/","datePublished": "2023-06-04T17:00:07+08:00","dateModified": "2023-06-04T17:00:07+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": "进阶使用执行：JS代码，模拟按键组合键、切换窗口总结。"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="My New Hugo Site"><span class="header-title-text">My New Hugo Site</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Selenium——进阶使用</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-category" title="分类 - 自动化测试"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 自动化测试</a>&ensp;<a href="/categories/python/" class="post-category" title="分类 - Python"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="post-meta-line"><span title="发布于 2023-06-04 17:00:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-04">2023-06-04</time></span>&nbsp;<span title="197 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#浏览器的控制">浏览器的控制</a></li>
+    <li><a href="#浏览器的窗口切换">浏览器的窗口切换</a>
+      <ul>
+        <li><a href="#获取窗口句柄">获取窗口句柄</a></li>
+        <li><a href="#切换窗口命令">切换窗口命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#进阶姿势">进阶姿势</a>
+      <ul>
+        <li><a href="#js代码执行">JS代码执行</a></li>
+        <li><a href="#上传文件的元素操作">上传文件的元素操作</a></li>
+        <li><a href="#隐式等待">隐式等待</a></li>
+        <li><a href="#显式等待">显式等待</a></li>
+      </ul>
+    </li>
+    <li><a href="#键盘操作">键盘操作</a>
+      <ul>
+        <li><a href="#第一种方法selenium自带的keys包">第一种方法——Selenium自带的Keys包</a></li>
+        <li><a href="#第二种方法python的第三方库pywin32库">第二种方法——Python的第三方库——pywin32库</a></li>
+      </ul>
+    </li>
+    <li><a href="#鼠标操作">鼠标操作</a>
+      <ul>
+        <li><a href="#全局鼠标操作语法如下">全局鼠标操作语法如下：</a></li>
+        <li><a href="#常用方法">常用方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="浏览器的控制" class="heading-element"><span>浏览器的控制</span>
+  <a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%9a%84%e6%8e%a7%e5%88%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>set_window_size(宽<span style="color:#960050;background-color:#1e0010">，</span>高)<span style="color:#75715e">#设置宽高</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>maximize_window()<span style="color:#75715e">#全屏显示</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>forward()  <span style="color:#75715e">#浏览器的上一步</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>back()  <span style="color:#75715e">#浏览器的后退</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>refresh()  <span style="color:#75715e">#浏览器的刷新</span></span></span></code></pre></div><h2 id="浏览器的窗口切换" class="heading-element"><span>浏览器的窗口切换</span>
+  <a href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%9a%84%e7%aa%97%e5%8f%a3%e5%88%87%e6%8d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="获取窗口句柄" class="heading-element"><span>获取窗口句柄</span>
+  <a href="#%e8%8e%b7%e5%8f%96%e7%aa%97%e5%8f%a3%e5%8f%a5%e6%9f%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>handles<span style="color:#f92672">=</span>driver<span style="color:#f92672">.</span>window_handles 
+</span></span><span style="display:flex;"><span>print(handles)</span></span></code></pre></div><h3 id="切换窗口命令" class="heading-element"><span>切换窗口命令</span>
+  <a href="#%e5%88%87%e6%8d%a2%e7%aa%97%e5%8f%a3%e5%91%bd%e4%bb%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>window(handles[<span style="color:#ae81ff">0</span>])</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:center">handles[0]</th>
+<th style="text-align:center"><strong>切换到最开始打开的窗口</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">handles[-1]</td>
+<td style="text-align:center"><strong>切换到最新打开的窗口</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">handles[-2]</td>
+<td style="text-align:center"><strong>倒数第二个打开的窗口</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="进阶姿势" class="heading-element"><span>进阶姿势</span>
+  <a href="#%e8%bf%9b%e9%98%b6%e5%a7%bf%e5%8a%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="js代码执行" class="heading-element"><span>JS代码执行</span>
+  <a href="#js%e4%bb%a3%e7%a0%81%e6%89%a7%e8%a1%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>executeScript是同步方法，用它执行js代码会阻塞主线程执行，直到js代码执行完毕；
+executeAsyncScript方法是异步方法，它不会阻塞主线程执行。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#值可写多个JS变量</span>
+</span></span><span style="display:flex;"><span>execute_script()
+</span></span><span style="display:flex;"><span>executeAsyncScript()</span></span></code></pre></div><h3 id="上传文件的元素操作" class="heading-element"><span>上传文件的元素操作</span>
+  <a href="#%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%e7%9a%84%e5%85%83%e7%b4%a0%e6%93%8d%e4%bd%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>WebElement adFileUpload <span style="color:#f92672">=</span>driver<span style="color:#f92672">.</span>findElement(By<span style="color:#f92672">.</span>id(<span style="color:#e6db74">&#34;上传&#34;</span>));
+</span></span><span style="display:flex;"><span>String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\1</span><span style="color:#e6db74">.php&#34;</span>;adFileUpload<span style="color:#f92672">.</span>sendKeys(filePath)</span></span></code></pre></div><h3 id="隐式等待" class="heading-element"><span>隐式等待</span>
+  <a href="#%e9%9a%90%e5%bc%8f%e7%ad%89%e5%be%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>如果在30秒内执行就继续下一步，没有执行就等待30秒，30秒如果元素还未出现则跳过，不抛出异常</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>implicitly_wait(<span style="color:#ae81ff">30</span>)</span></span></code></pre></div><h3 id="显式等待" class="heading-element"><span>显式等待</span>
+  <a href="#%e6%98%be%e5%bc%8f%e7%ad%89%e5%be%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>如果执行就继续下一步，没有执行就等待30秒，30秒如果元素还未出现则抛出异常，不继续
+demo:    <code>python result=WebDriverWait(driver,10).until(expected_conditions.alert_is_present())  </code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alert_is_present()  <span style="color:#75715e">#判断页面是否出现alert框</span>
+</span></span><span style="display:flex;"><span>title_is()  <span style="color:#75715e">#判断页面title内容是与传入的title_text内容完全匹配</span>
+</span></span><span style="display:flex;"><span>title_contains()  <span style="color:#75715e">#判断页面title标签的内容包含</span>
+</span></span><span style="display:flex;"><span>partial_title()  <span style="color:#75715e">#只需要部分匹配即可</span>
+</span></span><span style="display:flex;"><span>text_to_be_present_in_element_value()  <span style="color:#75715e">#判断text是否出现在元素的value属性值中</span>
+</span></span><span style="display:flex;"><span>text_to_be_present_in_element() <span style="color:#75715e">#判断文本内容test是否出现在某个元素中，判断的是元素的text</span>
+</span></span><span style="display:flex;"><span>presence_of_all_elements_located(<span style="color:#f92672">*</span>locator<span style="color:#f92672">*</span>)<span style="color:#75715e">#判断页面至少有一个如果元素出现，如果满足条件，返回所有满足定位表达式的页面元素</span></span></span></code></pre></div><div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">不等待某个元素加载，使用time.sleep方法，方便快捷。</div>
+    </div>
+  </div>
+<h2 id="键盘操作" class="heading-element"><span>键盘操作</span>
+  <a href="#%e9%94%ae%e7%9b%98%e6%93%8d%e4%bd%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="第一种方法selenium自带的keys包" class="heading-element"><span>第一种方法——Selenium自带的Keys包</span>
+  <a href="#%e7%ac%ac%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95selenium%e8%87%aa%e5%b8%a6%e7%9a%84keys%e5%8c%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys</span></span></code></pre></div><p>常见的键盘操作：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 删除键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>BACK_SPACE)    
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 空格键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>SPACE)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># tab 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>TAB)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># delete 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>DELETE)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># + 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>ADD)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># enter 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>ENTER)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># shift 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>SHIFT)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ctrl+A：全选</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>CONTROL, <span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ctrl+C：复制</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>CONTROL, <span style="color:#e6db74">&#39;c&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ctrl+V：粘贴</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>CONTROL, <span style="color:#e6db74">&#39;v&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ctrl+X：剪切</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>CONTROL, <span style="color:#e6db74">&#39;x&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># F1 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>F1)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 数字9 键</span>
+</span></span><span style="display:flex;"><span>sent_keys(Keys<span style="color:#f92672">.</span>NUMPAD9)</span></span></code></pre></div><p><img loading="lazy" src="https://images.scan.work/test/202306041615294.png" alt="2289881-20220608220557218-225439528" srcset="https://images.scan.work/test/202306041615294.png?size=small, https://images.scan.work/test/202306041615294.png?size=medium 1.5x, https://images.scan.work/test/202306041615294.png?size=large 2x" data-title="2289881-20220608220557218-225439528" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="第二种方法python的第三方库pywin32库" class="heading-element"><span>第二种方法——Python的第三方库——pywin32库</span>
+  <a href="#%e7%ac%ac%e4%ba%8c%e7%a7%8d%e6%96%b9%e6%b3%95python%e7%9a%84%e7%ac%ac%e4%b8%89%e6%96%b9%e5%ba%93pywin32%e5%ba%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> win32api
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> win32con
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeyboardKeys</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#模拟键盘按键类</span>
+</span></span><span style="display:flex;"><span>    VK_CODE<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;enter&#39;</span>:<span style="color:#ae81ff">0x0D</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;ctrl&#39;</span>:<span style="color:#ae81ff">0x11</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;v&#39;</span>:<span style="color:#ae81ff">0x56</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">keyDown</span>(keyName):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#按下按键</span>
+</span></span><span style="display:flex;"><span>        win32api<span style="color:#f92672">.</span>keybd_event(KeyboardKeys<span style="color:#f92672">.</span>VK_CODE[keyName],<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">keyUp</span>(keyName):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#释放按键</span>
+</span></span><span style="display:flex;"><span>        win32api<span style="color:#f92672">.</span>keybd_event(KeyboardKeys<span style="color:#f92672">.</span>VK_CODE[keyName],<span style="color:#ae81ff">0</span>,win32con<span style="color:#f92672">.</span>KEYEVENTF_KEYUP,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">oneKey</span>(key):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#模拟单个按键</span>
+</span></span><span style="display:flex;"><span>        KeyboardKeys<span style="color:#f92672">.</span>keyDown(key)
+</span></span><span style="display:flex;"><span>        KeyboardKeys<span style="color:#f92672">.</span>keyUp(key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoKeys</span>(key1,key2):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#模拟两个组合键</span>
+</span></span><span style="display:flex;"><span>        KeyboardKeys<span style="color:#f92672">.</span>keyDown(key1)
+</span></span><span style="display:flex;"><span>        KeyboardKeys<span style="color:#f92672">.</span>keyDown(key2)
+</span></span><span style="display:flex;"><span>        KeyboardKeys<span style="color:#f92672">.</span>keyUp(key2)
+</span></span><span style="display:flex;"><span>        KeyboardKeys<span style="color:#f92672">.</span>keyUp(key1)</span></span></code></pre></div><div class="details admonition question open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-question-circle fa-fw" aria-hidden="true"></i>问题<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>Keybd_event() 共有四个参数：</p>
+<p>第一个为按键的虚拟键值，如回车键为vk_return，tab键为vk_tab；</p>
+<p>第二个参数为扫描码，一般不用设置，用0代替就行；</p>
+<p>第三个参数为选项标志，如果为keydown则置0即可，如果为keyup则设成&quot;KEYEVENTF_KEYUP&quot;；</p>
+<p>第四个参数一般也是置0即可。</p>
+</div>
+    </div>
+  </div>
+<h2 id="鼠标操作" class="heading-element"><span>鼠标操作</span>
+  <a href="#%e9%bc%a0%e6%a0%87%e6%93%8d%e4%bd%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains</span></span></code></pre></div><h3 id="全局鼠标操作语法如下" class="heading-element"><span>全局鼠标操作语法如下：</span>
+  <a href="#%e5%85%a8%e5%b1%80%e9%bc%a0%e6%a0%87%e6%93%8d%e4%bd%9c%e8%af%ad%e6%b3%95%e5%a6%82%e4%b8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>1.初始化ActionChians类（动作链条）：</p>
+<pre tabindex="0"><code> actions = ActionChains(driver) </code></pre><p>2.找到要操作的元素：</p>
+<pre tabindex="0"><code> element = find_element (值)</code></pre><p>3.调用鼠标操作方法：</p>
+<pre tabindex="0"><code>actions.move_to_element(element) </code></pre><p>4.执行鼠标操作方法：</p>
+<pre tabindex="0"><code>actions.perform()</code></pre><p>调用 perform() 方法时，队列中的操作会依次进行。</p>
+<h3 id="常用方法" class="heading-element"><span>常用方法</span>
+  <a href="#%e5%b8%b8%e7%94%a8%e6%96%b9%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>double_click(on_element<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>) <span style="color:#75715e">#双击鼠标左键</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#常用于拖拽验证码环节，不包括图像补全验证码。</span>
+</span></span><span style="display:flex;"><span>source <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_id(xxx)
+</span></span><span style="display:flex;"><span>target <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_id(xxx)
+</span></span><span style="display:flex;"><span>drag_and_drop(source, target)
+</span></span><span style="display:flex;"><span>action<span style="color:#f92672">.</span>drag_and_drop(source, target)<span style="color:#f92672">.</span>perform()  <span style="color:#75715e">#拖拽元素</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>move_by_offset(xoffset, yoffset)  <span style="color:#75715e">#鼠标从1位置移动到2坐标</span>
+</span></span><span style="display:flex;"><span>release(on_element<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)  <span style="color:#75715e">#在元素上释放按住的鼠标按钮（在某个元素位置松开鼠标左键）</span></span></span></code></pre></div><div class="details admonition info open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">最终调用 perform() 方法时，队列中的操作才会依次进行。</div>
+    </div>
+  </div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-06-04 17:00:07">更新于 2023-06-04&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" data-title="Selenium——进阶使用" data-hashtags="工具,Python,Selenium"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" data-hashtag="工具"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" data-title="Selenium——进阶使用"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%B7%A5%E5%85%B7/" class="post-tag" title="标签 - 工具">工具</a><a href="/tags/python/" class="post-tag" title="标签 - Python">Python</a><a href="/tags/selenium/" class="post-tag" title="标签 - Selenium">Selenium</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/chromedriver%E5%AE%89%E8%A3%85/" class="post-nav-item" rel="prev" title="Selenium——ChromeDriver安装"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Selenium——ChromeDriver安装</a>
+      <a href="/posts/%E5%BD%A2%E6%80%81%E5%AD%A6%E6%96%B9%E6%B3%95%E6%A3%80%E6%B5%8B/" class="post-nav-item" rel="next" title="形态学检测方法">形态学检测方法<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.126.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.7"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
