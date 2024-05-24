@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Documentation - 分类 - Scan&#39;s Blog</title>
+    <link>http://localhost:1313/categories/documentation/</link>
+    <description>Documentation - 分类 | Scan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Mon, 20 Feb 2023 20:14:22 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+  <title>快速上手</title>
+  <link>http://localhost:1313/posts/test/</link>
+  <pubDate>Mon, 20 Feb 2023 20:14:22 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>http://localhost:1313/posts/test/</guid>
+  <description><![CDATA[<p>学习在几分钟内创建一个 Hugo <strong>FixIt</strong> 站点。</p>]]></description>
+</item>
+</channel>
+</rss>
