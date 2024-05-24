@@ -1,89 +1,89 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Scan&#39;s Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://hack-scan.github.io/</link>
     <description>Scan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
       <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Fri, 24 May 2024 12:16:13 &#43;0800</lastBuildDate>
-      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://hack-scan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
   <title>Linux无Gui运行Selenium附带插件浏览器</title>
-  <link>http://localhost:1313/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+  <link>https://hack-scan.github.io/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
   <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
+  <guid>https://hack-scan.github.io/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
   <description><![CDATA[Linux无Gui运行附带插件浏览器]]></description>
 </item>
 <item>
   <title>Python代码序列化混淆压缩学习记录</title>
-  <link>http://localhost:1313/posts/python%E4%BB%A3%E7%A0%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B7%B7%E6%B7%86%E5%8E%8B%E7%BC%A9%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+  <link>https://hack-scan.github.io/posts/python%E4%BB%A3%E7%A0%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B7%B7%E6%B7%86%E5%8E%8B%E7%BC%A9%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
   <pubDate>Wed, 15 May 2024 12:00:00 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/python%E4%BB%A3%E7%A0%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B7%B7%E6%B7%86%E5%8E%8B%E7%BC%A9%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+  <guid>https://hack-scan.github.io/posts/python%E4%BB%A3%E7%A0%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B7%B7%E6%B7%86%E5%8E%8B%E7%BC%A9%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
   <description><![CDATA[序列化混淆压缩、反序列化操作学习记录]]></description>
 </item>
 <item>
   <title>青龙面板学习笔记</title>
-  <link>http://localhost:1313/posts/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+  <link>https://hack-scan.github.io/posts/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
   <pubDate>Sat, 06 Apr 2024 20:30:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+  <guid>https://hack-scan.github.io/posts/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
   <description><![CDATA[安装、使用、拉库、配置]]></description>
 </item>
 <item>
   <title>OpenCV——基础笔记(二)</title>
-  <link>http://localhost:1313/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
+  <link>https://hack-scan.github.io/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
   <pubDate>Sun, 23 Jul 2023 18:10:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%BA%8C/</guid>
+  <guid>https://hack-scan.github.io/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%BA%8C/</guid>
   <description><![CDATA[图片创建、修改、翻转与画线、形状。]]></description>
 </item>
 <item>
   <title>OpenCV——基础笔记(一)</title>
-  <link>http://localhost:1313/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B8%80/</link>
+  <link>https://hack-scan.github.io/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B8%80/</link>
   <pubDate>Sat, 22 Jul 2023 20:20:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B8%80/</guid>
+  <guid>https://hack-scan.github.io/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B8%80/</guid>
   <description><![CDATA[理解图像的本质,图片、颜色通道、转化方式、备份原图。]]></description>
 </item>
 <item>
   <title>形态学检测方法</title>
-  <link>http://localhost:1313/posts/%E5%BD%A2%E6%80%81%E5%AD%A6%E6%96%B9%E6%B3%95%E6%A3%80%E6%B5%8B/</link>
+  <link>https://hack-scan.github.io/posts/%E5%BD%A2%E6%80%81%E5%AD%A6%E6%96%B9%E6%B3%95%E6%A3%80%E6%B5%8B/</link>
   <pubDate>Tue, 06 Jun 2023 20:30:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/%E5%BD%A2%E6%80%81%E5%AD%A6%E6%96%B9%E6%B3%95%E6%A3%80%E6%B5%8B/</guid>
+  <guid>https://hack-scan.github.io/posts/%E5%BD%A2%E6%80%81%E5%AD%A6%E6%96%B9%E6%B3%95%E6%A3%80%E6%B5%8B/</guid>
   <description><![CDATA[安装、使用、拉库、配置]]></description>
 </item>
 <item>
   <title>Selenium——进阶使用</title>
-  <link>http://localhost:1313/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/</link>
+  <link>https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/</link>
   <pubDate>Sun, 04 Jun 2023 17:00:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/</guid>
+  <guid>https://hack-scan.github.io/posts/chromedriver%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/</guid>
   <description><![CDATA[进阶使用执行：JS代码，模拟按键组合键、切换窗口总结。]]></description>
 </item>
 <item>
   <title>Selenium——ChromeDriver安装</title>
-  <link>http://localhost:1313/posts/chromedriver%E5%AE%89%E8%A3%85/</link>
+  <link>https://hack-scan.github.io/posts/chromedriver%E5%AE%89%E8%A3%85/</link>
   <pubDate>Sat, 03 Jun 2023 17:00:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/chromedriver%E5%AE%89%E8%A3%85/</guid>
+  <guid>https://hack-scan.github.io/posts/chromedriver%E5%AE%89%E8%A3%85/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://images.scan.work/test/202306041300839.png" alt="Selenium——ChromeDriver安装" title="安装便捷、对应版本、安装建议、不同系统下的安装方法" referrerpolicy="no-referrer"/></div>安装便捷、对应版本、安装建议、不同系统下的安装方法]]></description>
 </item>
 <item>
   <title>携Badusb进校园的系列测试</title>
-  <link>http://localhost:1313/posts/badusb/</link>
+  <link>https://hack-scan.github.io/posts/badusb/</link>
   <pubDate>Sat, 27 May 2023 09:56:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/badusb/</guid>
+  <guid>https://hack-scan.github.io/posts/badusb/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://images.scan.work/test/202305271046095.webp" alt="携Badusb进校园的系列测试" title="携Badusb进校园的系列测试" referrerpolicy="no-referrer"/></div>]]></description>
 </item>
 <item>
   <title>Markdown编辑器——Typora破解版</title>
-  <link>http://localhost:1313/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</link>
+  <link>https://hack-scan.github.io/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</link>
   <pubDate>Thu, 25 May 2023 22:56:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>http://localhost:1313/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</guid>
+  <guid>https://hack-scan.github.io/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://images.scan.work/test/202305261439411.png" alt="Markdown编辑器——Typora破解版" title="本文介绍破解版的使用、便捷化的方法（不修改系统时间不用管理员运行）" referrerpolicy="no-referrer"/></div>本文介绍破解版的使用、便捷化的方法（不修改系统时间不用管理员运行）]]></description>
 </item>
 </channel>
