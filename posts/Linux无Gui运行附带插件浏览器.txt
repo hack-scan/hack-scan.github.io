@@ -1,0 +1,109 @@
+---
+title: "Linux无Gui运行Selenium附带插件浏览器"
+date: 2024-05-16T14:00:00+08:00
+draft: true
+
+description: Linux无Gui运行附带插件浏览器
+password: flagscan
+message: 暂未公开
+weight: 0
+tags:
+  - Selenium
+  - Linux
+categories:
+  - Linux
+  - 自动化测试
+---
+
+<!--more-->
+
+# Linux无Gui运行Selenium附带插件浏览器
+
+## 环境介绍
+![image-20240516161312514](https://images.scan.work/test/202405161613559.png)
+
+我是在Docker环境下的青龙面板下安装的Selenium，系统采用的是whyour/qinglong:latest
+**latest**镜像是基于 **alpine** 构建，**debian **镜像是基于 **debian-slim** 构建
+>环境： alpine镜像  
+>     Python3.11  
+
+## 安装alpine环境下的chromium、Chromedriver、selenium
+```bash
+apk update
+pip install selenium
+apk add chromium chromium-chromedriver
+which chromedriver
+```
+镜像官网查看版本：
+
+![image-20240516145330376](https://images.scan.work/test/202405161453416.png)
+
+![image-20240516145743427](https://images.scan.work/test/202405161457455.png)
+
+返回ChromeDriver的路径，如图：
+
+![image-20240516144852317](https://images.scan.work/test/202405161448335.png)
+
+## 调用浏览器插件、书签、用户数据等
+我们需要在自己Linux环境下下载好需要用的插件，
+这里举例用油猴插件，当访问**百度**时修改标题为**搜狐**
+我这里是虚拟机来做示例：
+用Ubnutu下Chromium浏览器去访问 ***chrome://version	***
+![image-20240516150348041](https://images.scan.work/test/202405161503089.png)
+把文件传到服务器下，记录好路径，这里直接贴出Python代码
+```python
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+import time
+import os
+
+# 指定ChromeDriver的路径
+chromedriver_path = '/usr/lib/chromium/chromedriver'
+
+# 创建ChromeOptions实例，并添加所需的选项
+chrome_options = Options()
+chrome_options.add_argument("--user-data-dir=/home/google-chrome-for-testing")
+
+user_data_dir = '/home/google-chrome-for-testing/'
+if os.path.exists(user_data_dir) and os.listdir(user_data_dir):
+    print("用户数据目录已存在且不为空")
+else:
+    print("用户数据目录不存在或为空")
+
+chrome_options.add_argument("--no-sandbox")  # 在服务器环境中运行时禁用沙箱
+chrome_options.add_argument("--headless=new")  # 以无头模式运行
+chrome_options.add_argument("--disable-gpu")  # 禁用GPU加速
+chrome_options.add_argument("--log-path=/home/chromedriver.log")  # 设置ChromeDriver日志路径
+chrome_options.add_argument("--remote-debugging-port=9222")
+#chrome_options.add_argument('--profile-directory=/home/google-chrome-for-testing')
+
+service = Service(executable_path=chromedriver_path)
+
+# 使用Service和Options启动Chrome浏览器
+driver = webdriver.Chrome(service=service, options=chrome_options)
+
+# 访问百度
+driver.get('https://www.baidu.com')
+time.sleep(8)  # 等待一段时间，确保页面加载完成
+
+# 打印页面标题
+print(driver.title)
+
+# 获取并打印页面源码
+
+# 关闭浏览器
+```
+
+
+{{< admonition warning >}}
+
+--user-data-dir=/home/google-chrome-for-testing")
+不能包含**Default**路径名，必须为父目录，否则不会生效！
+
+{{< /admonition >}}
+
+运行一下看看：
+
+![image-20240516155834623](https://images.scan.work/test/202405161558663.png)
+
