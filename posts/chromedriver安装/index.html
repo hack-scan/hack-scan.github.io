@@ -12,7 +12,7 @@
   <meta itemprop="description" content="安装便捷、对应版本、安装建议、不同系统下的安装方法">
   <meta itemprop="datePublished" content="2023-06-03T17:00:07+08:00">
   <meta itemprop="dateModified" content="2023-06-03T17:00:07+08:00">
-  <meta itemprop="wordCount" content="366">
+  <meta itemprop="wordCount" content="500">
   <meta itemprop="keywords" content="工具,Python,Selenium"><meta property="og:url" content="https://hack-scan.github.io/posts/chromedriver%E5%AE%89%E8%A3%85/">
   <meta property="og:site_name" content="Scan&#39;s Blog">
   <meta property="og:title" content="Selenium——ChromeDriver安装">
@@ -43,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/hack-scan.github.io\/posts\/chromedriver%E5%AE%89%E8%A3%85\/"
-    },"genre": "posts","keywords": "工具, Python, Selenium","wordcount":  366 ,
+    },"genre": "posts","keywords": "工具, Python, Selenium","wordcount":  500 ,
     "url": "https:\/\/hack-scan.github.io\/posts\/chromedriver%E5%AE%89%E8%A3%85\/","datePublished": "2023-06-03T17:00:07+08:00","dateModified": "2023-06-03T17:00:07+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -217,7 +217,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Selenium——ChromeDriver安装</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-category" title="分类 - 自动化测试"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 自动化测试</a>&ensp;<a href="/categories/python/" class="post-category" title="分类 - Python"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="post-meta-line"><span title="发布于 2023-06-03 17:00:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-03">2023-06-03</time></span>&nbsp;<span title="366 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-category" title="分类 - 自动化测试"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 自动化测试</a>&ensp;<a href="/categories/python/" class="post-category" title="分类 - Python"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="post-meta-line"><span title="发布于 2023-06-03 17:00:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-03">2023-06-03</time></span>&nbsp;<span title="500 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -244,7 +244,14 @@
   <a href="#%e5%ae%89%e8%a3%85selenium" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip install selenium</span></span></code></pre></div><h2 id="安装chromedriver" class="heading-element"><span>安装ChromeDriver</span>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">install</span> <span class="n">selenium</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装chromedriver" class="heading-element"><span>安装ChromeDriver</span>
   <a href="#%e5%ae%89%e8%a3%85chromedriver" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -276,19 +283,46 @@
   </a>
 </h2><p>将安装好的ChromeDriver目录添加到环境变量</p>
 <p>如果没有配置,则在你的Python代码中写出：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-</span></span><span style="display:flex;"><span>options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(executable_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;你的ChromeDriver的绝对路径&#34;</span>, options<span style="color:#f92672">=</span>options)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://www.baidu.com/&#34;</span>)
-</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>close()</span></span></code></pre></div><h2 id="简便设置" class="heading-element"><span>简便设置</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;你的ChromeDriver的绝对路径&#34;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://www.baidu.com/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="简便设置" class="heading-element"><span>简便设置</span>
   <a href="#%e7%ae%80%e4%be%bf%e8%ae%be%e7%bd%ae" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>在Chrome快捷方式标签下，目标后面加上参数，在目标后加入cmd当中的参数，起始位置为自己的项目路径，这样方便管理各个测试项目、端口，目录英文名即为项目名。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>–remote-debugging-port<span style="color:#f92672">=</span><span style="color:#ae81ff">9222</span> --user-data-dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./自定义空目录（英文）&#34;</span></span></span></code></pre></div><p>使用cmd，运行下面的命令，即可查看运行状态。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>netstat -ano | findstr <span style="color:#ae81ff">9222</span></span></span></code></pre></div><div class="details admonition tip open">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">–remote-debugging-port<span class="o">=</span><span class="m">9222</span> --user-data-dir<span class="o">=</span><span class="s2">&#34;./自定义空目录（英文）&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用cmd，运行下面的命令，即可查看运行状态。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">netstat -ano <span class="p">|</span> findstr <span class="m">9222</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
@@ -301,127 +335,254 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>如遇到版本不匹配等问题，运行下面代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> win32com.client <span style="color:#f92672">import</span> Dispatch
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> stat<span style="color:#f92672">,</span>zipfile<span style="color:#f92672">,</span>os<span style="color:#f92672">,</span>psutil
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> lxml <span style="color:#f92672">import</span> etree
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">auto_download_chromedrive</span>(object):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>chromedrive_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://chromedriver.chromium.org/downloads&#34;</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>local_chrome_paths <span style="color:#f92672">=</span> [<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>,
-</span></span><span style="display:flex;"><span>                                   <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&#34;</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;content-type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
-</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0&#39;</span>}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_version_via_com</span>(self, filename):
-</span></span><span style="display:flex;"><span>        parser <span style="color:#f92672">=</span> Dispatch(<span style="color:#e6db74">&#34;Scripting.FileSystemObject&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            version <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>GetFileVersion(filename)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> version
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_chromedriver_urls</span>(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
-</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>get(self<span style="color:#f92672">.</span>chromedrive_url, headers<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>headers)
-</span></span><span style="display:flex;"><span>            print(response<span style="color:#f92672">.</span>status_code, response<span style="color:#f92672">.</span>encoding)
-</span></span><span style="display:flex;"><span>            html <span style="color:#f92672">=</span> etree<span style="color:#f92672">.</span>HTML(response<span style="color:#f92672">.</span>text, etree<span style="color:#f92672">.</span>HTMLParser())  <span style="color:#75715e"># 解析HTML文本内容</span>
-</span></span><span style="display:flex;"><span>            version_href <span style="color:#f92672">=</span> html<span style="color:#f92672">.</span>xpath(<span style="color:#e6db74">&#34;.//strong//..//@href&#34;</span>)
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;all chrome browser versions can be choosed:&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> href <span style="color:#f92672">in</span> version_href:
-</span></span><span style="display:flex;"><span>                print(href)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> version_href
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">download_chromadrive</span>(self, url):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
-</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>get(url, headers<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>headers)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;chromedriver_win32.zip&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>                    f<span style="color:#f92672">.</span>write(response<span style="color:#f92672">.</span>content)
-</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">&#34;下载完成&#34;</span>)
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#39;Url请求返回错误，错误码为： </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> response<span style="color:#f92672">.</span>status_code)
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;request download chromedriver_win32.zip failed!&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find_local_version</span>(self, loc_ver, all_ver):
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        :param loc_ver: 本地浏览器的版本
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        :param all_ver: 下载的所有版本浏览器版本
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        :return: 找到匹配的，return url,否则return None
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> href <span style="color:#f92672">in</span> all_ver:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>                res <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;path=(.*?)/&#34;</span>, href)
-</span></span><span style="display:flex;"><span>                find_ver <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;.&#34;</span>)[<span style="color:#ae81ff">0</span>] <span style="color:#75715e">#截取大版本</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> loc_ver <span style="color:#f92672">==</span> find_ver:
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> href
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;not find match chrome browser</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> version!&#34;</span><span style="color:#f92672">.</span>format(loc_ver))
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">kill_process</span>(self, process_name):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;检测</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">进程是否存在，存在则杀掉。&#34;</span><span style="color:#f92672">.</span>format(process_name))
-</span></span><span style="display:flex;"><span>        pl <span style="color:#f92672">=</span> psutil<span style="color:#f92672">.</span>pids()
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> pid <span style="color:#f92672">in</span> pl:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> psutil<span style="color:#f92672">.</span>Process(pid)<span style="color:#f92672">.</span>name() <span style="color:#f92672">==</span> process_name:
-</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> 存在进程中,杀掉&#39;</span><span style="color:#f92672">.</span>format(process_name))
-</span></span><span style="display:flex;"><span>                os<span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#39;taskkill /f /im </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>process_name)
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> pid
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> 不存在进程中。&#39;</span><span style="color:#f92672">.</span>format(process_name))
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unzip</span>(self):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>kill_process(<span style="color:#e6db74">&#34;chromedriver.exe&#34;</span>)
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;去除旧版本chromedriver_win32文件夹内文件的只读属性(如果是只读)&#34;</span>)
-</span></span><span style="display:flex;"><span>        old_driver_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getcwd(), <span style="color:#e6db74">&#34;chromedriver_win32&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(old_driver_path):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> sub_file <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(old_driver_path):
-</span></span><span style="display:flex;"><span>                os<span style="color:#f92672">.</span>chmod(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(old_driver_path, sub_file), stat<span style="color:#f92672">.</span>S_IRWXU)
-</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">#这个delay必须要有，os操作还是需要时间的</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;&#39;&#39;解压 chromedriver_win32.zip,覆盖旧版本&#39;&#39;&#39;</span>)
-</span></span><span style="display:flex;"><span>        zFile <span style="color:#f92672">=</span> zipfile<span style="color:#f92672">.</span>ZipFile(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getcwd(), <span style="color:#e6db74">&#34;chromedriver_win32.zip&#34;</span>), <span style="color:#e6db74">&#34;r&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> fileM <span style="color:#f92672">in</span> zFile<span style="color:#f92672">.</span>namelist():
-</span></span><span style="display:flex;"><span>            zFile<span style="color:#f92672">.</span>extract(fileM, old_driver_path)
-</span></span><span style="display:flex;"><span>        zFile<span style="color:#f92672">.</span>close()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">start</span>(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;&#39;&#39;读取本地chrome version&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>        version <span style="color:#f92672">=</span> list(filter(<span style="color:#66d9ef">None</span>, [self<span style="color:#f92672">.</span>get_version_via_com(p) <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>local_chrome_paths]))[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> version:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;check chrome browser version failed!&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;chrome browser version:&#34;</span>, version)
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;&#39;&#39;下载网页端与本地匹配的chromedriver.exe&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>        version_href <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_chromedriver_urls()
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> version_href:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;request </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> failed!&#34;</span><span style="color:#f92672">%</span>self<span style="color:#f92672">.</span>chromedrive_url)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        find_url <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find_local_version(version<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;.&#34;</span>)[<span style="color:#ae81ff">0</span>], version_href)
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;找到匹配的版本:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">%</span>find_url)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> find_url:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        version_num <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;path=(.*?)/&#34;</span>, find_url)<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        find_url_2 <span style="color:#f92672">=</span> find_url<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#ae81ff">2</span>)[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>        new_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">/chromedriver_win32.zip&#34;</span><span style="color:#f92672">.</span>format(find_url_2, version_num)
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;downloading......</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">%</span>new_url)
-</span></span><span style="display:flex;"><span>        ret <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>download_chromadrive(new_url)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> ret:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>unzip()
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    chrome <span style="color:#f92672">=</span> auto_download_chromedrive()
-</span></span><span style="display:flex;"><span>    chrome<span style="color:#f92672">.</span>start()</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">win32com.client</span> <span class="kn">import</span> <span class="n">Dispatch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">stat</span><span class="o">,</span><span class="nn">zipfile</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">psutil</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">auto_download_chromedrive</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">chromedrive_url</span> <span class="o">=</span> <span class="s2">&#34;https://chromedriver.chromium.org/downloads&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">local_chrome_paths</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="sa">r</span><span class="s2">&#34;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:22.0) Gecko/20100101 Firefox/22.0&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_version_via_com</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parser</span> <span class="o">=</span> <span class="n">Dispatch</span><span class="p">(</span><span class="s2">&#34;Scripting.FileSystemObject&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">version</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">GetFileVersion</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">version</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_chromedriver_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">response</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chromedrive_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">html</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTMLParser</span><span class="p">())</span>  <span class="c1"># 解析HTML文本内容</span>
+</span></span><span class="line"><span class="cl">            <span class="n">version_href</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;.//strong//..//@href&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;all chrome browser versions can be choosed:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">version_href</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">version_href</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">download_chromadrive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">response</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;chromedriver_win32.zip&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;下载完成&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Url请求返回错误，错误码为： </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;request download chromedriver_win32.zip failed!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">find_local_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc_ver</span><span class="p">,</span> <span class="n">all_ver</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        :param loc_ver: 本地浏览器的版本
+</span></span></span><span class="line"><span class="cl"><span class="s2">        :param all_ver: 下载的所有版本浏览器版本
+</span></span></span><span class="line"><span class="cl"><span class="s2">        :return: 找到匹配的，return url,否则return None
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">all_ver</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;path=(.*?)/&#34;</span><span class="p">,</span> <span class="n">href</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">find_ver</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#截取大版本</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">loc_ver</span> <span class="o">==</span> <span class="n">find_ver</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="n">href</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;not find match chrome browser</span><span class="si">{}</span><span class="s2"> version!&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loc_ver</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">kill_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;检测</span><span class="si">{}</span><span class="s2">进程是否存在，存在则杀掉。&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">process_name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pl</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">pids</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">pl</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="n">process_name</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> 存在进程中,杀掉&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">process_name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;taskkill /f /im </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">process_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">pid</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> 不存在进程中。&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">process_name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">unzip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">kill_process</span><span class="p">(</span><span class="s2">&#34;chromedriver.exe&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;去除旧版本chromedriver_win32文件夹内文件的只读属性(如果是只读)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">old_driver_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&#34;chromedriver_win32&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">old_driver_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">sub_file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">old_driver_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">old_driver_path</span><span class="p">,</span> <span class="n">sub_file</span><span class="p">),</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IRWXU</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#这个delay必须要有，os操作还是需要时间的</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;解压 chromedriver_win32.zip,覆盖旧版本&#39;&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">zFile</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&#34;chromedriver_win32.zip&#34;</span><span class="p">),</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">fileM</span> <span class="ow">in</span> <span class="n">zFile</span><span class="o">.</span><span class="n">namelist</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">zFile</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">fileM</span><span class="p">,</span> <span class="n">old_driver_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">zFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;&#39;&#39;读取本地chrome version&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">version</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_version_via_com</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_chrome_paths</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">version</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;check chrome browser version failed!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;chrome browser version:&#34;</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;&#39;&#39;下载网页端与本地匹配的chromedriver.exe&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">version_href</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_chromedriver_urls</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">version_href</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;request </span><span class="si">%s</span><span class="s2"> failed!&#34;</span><span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">chromedrive_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">find_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_local_version</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">version_href</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;找到匹配的版本:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">find_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">find_url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="n">version_num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;path=(.*?)/&#34;</span><span class="p">,</span> <span class="n">find_url</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">find_url_2</span> <span class="o">=</span> <span class="n">find_url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">new_url</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">/chromedriver_win32.zip&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">find_url_2</span><span class="p">,</span> <span class="n">version_num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;downloading......</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">new_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">download_chromadrive</span><span class="p">(</span><span class="n">new_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">unzip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chrome</span> <span class="o">=</span> <span class="n">auto_download_chromedrive</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chrome</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -455,6 +616,6 @@
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
 </div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":30},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2023-05-19T19:30:34+08:00","version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2023-05-19T19:30:34+08:00","version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script></body>
 </html>
