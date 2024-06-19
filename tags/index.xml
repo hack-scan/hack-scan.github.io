@@ -4,7 +4,15 @@
     <link>https://hack-scan.github.io/tags/</link>
     <description>Tags - 标签 | Scan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
-      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Thu, 16 May 2024 14:00:00 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>Golang</title>
+  <link>https://hack-scan.github.io/tags/golang/</link>
+  <pubDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/tags/golang/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Linux</title>
   <link>https://hack-scan.github.io/tags/linux/</link>
   <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
   <pubDate>Sun, 23 Jul 2023 18:10:07 &#43;0800</pubDate>
   <author>Scan</author>
   <guid>https://hack-scan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>物理硬件</title>
-  <link>https://hack-scan.github.io/tags/%E7%89%A9%E7%90%86%E7%A1%AC%E4%BB%B6/</link>
-  <pubDate>Sat, 27 May 2023 09:56:07 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/tags/%E7%89%A9%E7%90%86%E7%A1%AC%E4%BB%B6/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

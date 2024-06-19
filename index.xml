@@ -4,9 +4,17 @@
     <link>https://hack-scan.github.io/</link>
     <description>Scan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
-      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Fri, 24 May 2024 12:16:13 &#43;0800</lastBuildDate>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</lastBuildDate>
       <atom:link href="https://hack-scan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Golang基础学习笔记</title>
+  <link>https://hack-scan.github.io/posts/golang%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/posts/golang%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Linux无Gui运行Selenium附带插件浏览器</title>
   <link>https://hack-scan.github.io/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
   <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
   <author>Scan</author>
   <guid>https://hack-scan.github.io/posts/badusb/</guid>
   <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Markdown编辑器——Typora破解版</title>
-  <link>https://hack-scan.github.io/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</link>
-  <pubDate>Thu, 25 May 2023 22:56:07 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</guid>
-  <description><![CDATA[本文介绍破解版的使用、便捷化的方法（不修改系统时间不用管理员运行）]]></description>
 </item>
 </channel>
 </rss>

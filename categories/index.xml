@@ -4,7 +4,15 @@
     <link>https://hack-scan.github.io/categories/</link>
     <description>Categories - 分类 | Scan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
-      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Thu, 16 May 2024 14:00:00 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+  <title>Golang</title>
+  <link>https://hack-scan.github.io/categories/golang/</link>
+  <pubDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/categories/golang/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Linux</title>
   <link>https://hack-scan.github.io/categories/linux/</link>
   <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
