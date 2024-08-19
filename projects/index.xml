@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>我的作品集 on Scan&#39;s Blog</title>
+    <link>https://hack-scan.github.io/projects/</link>
+    <description>Recent content in 我的作品集 on Scan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>safexuan@gmail.com (Scan)</managingEditor>
+    <webMaster>safexuan@gmail.com (Scan)</webMaster>
+    <atom:link href="https://hack-scan.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

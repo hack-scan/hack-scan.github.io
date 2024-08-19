@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>近源渗透 - 分类 - Scan&#39;s Blog</title>
+    <link>https://hack-scan.github.io/categories/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/</link>
+    <description>近源渗透 - 分类 | Scan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Sat, 27 May 2023 09:56:07 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/categories/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/" rel="self" type="application/rss+xml" /><item>
+  <title>携Badusb进校园的系列测试</title>
+  <link>https://hack-scan.github.io/posts/badusb/</link>
+  <pubDate>Sat, 27 May 2023 09:56:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/posts/badusb/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

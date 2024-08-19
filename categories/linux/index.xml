@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Linux - 分类 - Scan&#39;s Blog</title>
+    <link>https://hack-scan.github.io/categories/linux/</link>
+    <description>Linux - 分类 | Scan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Thu, 16 May 2024 14:00:00 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/categories/linux/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux无Gui运行Selenium附带插件浏览器</title>
+  <link>https://hack-scan.github.io/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+  <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/posts/linux%E6%97%A0gui%E8%BF%90%E8%A1%8C%E9%99%84%E5%B8%A6%E6%8F%92%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
+  <description><![CDATA[Linux无Gui运行附带插件浏览器]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Golang - 分类 - Scan&#39;s Blog</title>
+    <link>https://hack-scan.github.io/categories/golang/</link>
+    <description>Golang - 分类 | Scan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/categories/golang/" rel="self" type="application/rss+xml" /><item>
+  <title>Golang基础学习笔记</title>
+  <link>https://hack-scan.github.io/posts/golang%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/posts/golang%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

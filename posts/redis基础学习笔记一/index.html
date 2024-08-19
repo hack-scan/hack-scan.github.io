@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Redis基础学习笔记（一） - Scan&#39;s Blog</title><meta name="author" content="Scan">
+<meta name="author-link" content="https://www.scan.work/">
+<meta name="description" content="Redis 的八种数据结构" /><meta name="keywords" content='Redis' />
+  <meta itemprop="name" content="Redis基础学习笔记（一）">
+  <meta itemprop="description" content="Redis 的八种数据结构">
+  <meta itemprop="datePublished" content="2024-07-10T18:30:07+08:00">
+  <meta itemprop="dateModified" content="2024-07-10T18:30:07+08:00">
+  <meta itemprop="wordCount" content="455">
+  <meta itemprop="keywords" content="Redis"><meta property="og:url" content="https://hack-scan.github.io/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">
+  <meta property="og:site_name" content="Scan&#39;s Blog">
+  <meta property="og:title" content="Redis基础学习笔记（一）">
+  <meta property="og:description" content="Redis 的八种数据结构">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-10T18:30:07+08:00">
+    <meta property="article:modified_time" content="2024-07-10T18:30:07+08:00">
+    <meta property="article:tag" content="Redis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Redis基础学习笔记（一）">
+  <meta name="twitter:description" content="Redis 的八种数据结构">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://hack-scan.github.io/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" /><link rel="prev" href="https://hack-scan.github.io/posts/golang%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="next" href="https://hack-scan.github.io/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Redis基础学习笔记（一）",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/hack-scan.github.io\/posts\/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80\/"
+    },"genre": "posts","keywords": "Redis","wordcount":  455 ,
+    "url": "https:\/\/hack-scan.github.io\/posts\/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80\/","datePublished": "2024-07-10T18:30:07+08:00","dateModified": "2024-07-10T18:30:07+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Scan"
+      },"description": "Redis 的八种数据结构"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/life/"
+                
+                
+              ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/life/"
+                  
+                  
+                ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/about/"
+                    
+                    
+                  ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Redis基础学习笔记（一）</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/redis/" class="post-category" title="分类 - Redis"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Redis</a></span></div><div class="post-meta-line"><span title="发布于 2024-07-10 18:30:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-07-10">2024-07-10</time></span>&nbsp;<span title="455 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#string-字符串">String 字符串</a></li>
+    <li><a href="#hash对象">Hash对象</a></li>
+    <li><a href="#无序集合">无序集合</a></li>
+    <li><a href="#有序集合">有序集合</a></li>
+    <li><a href="#列表">列表</a></li>
+    <li><a href="#地理位置">地理位置</a></li>
+    <li><a href="#位图bitmap">位图(Bitmap)</a></li>
+    <li><a href="#基数数据集">基数(数据集)</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="redis-的八种数据结构" class="heading-element"><span>Redis 的八种数据结构</span>
+  <a href="#redis-%e7%9a%84%e5%85%ab%e7%a7%8d%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h2 id="string-字符串" class="heading-element"><span>String 字符串</span>
+  <a href="#string-%e5%ad%97%e7%ac%a6%e4%b8%b2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>&#x31;&#xfe0f;&#x20e3; 支持二进制（可存储图片或序列化对象），单个最大512MB。</p>
+<p>&#x32;&#xfe0f;&#x20e3; 一个Key对应一个Value，并且Set之后会覆盖之前所存储的值。</p>
+<p><strong>基本语法</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">set</span> key value
+</span></span><span class="line"><span class="cl">getrange key start end <span class="c1"># 字符串值的子字符（单个字符）</span>
+</span></span><span class="line"><span class="cl">exists key <span class="c1"># 判断存在返回1，不存在则返回0</span>
+</span></span><span class="line"><span class="cl">append key value <span class="c1"># 追加到value到原值之后</span>
+</span></span><span class="line"><span class="cl">strlen key <span class="c1"># 查看字符串长度</span>
+</span></span><span class="line"><span class="cl">incr key <span class="m">10</span> <span class="c1"># 自增1   incrby key 10 自增10</span>
+</span></span><span class="line"><span class="cl">decr key <span class="c1"># 自减1      decrby key 10 自减10</span>
+</span></span><span class="line"><span class="cl">setrange key start vakue <span class="c1"># 在Start位置替换为value</span>
+</span></span><span class="line"><span class="cl">setnx key value <span class="c1">#如果键存在，则不设置值</span>
+</span></span><span class="line"><span class="cl">mset k1 v1 k2 v2 <span class="c1">#设置多个键值</span>
+</span></span><span class="line"><span class="cl">mget k1 k2 <span class="c1">#获取多个值</span>
+</span></span><span class="line"><span class="cl">msetnx k1 v1 k2 v2 <span class="c1">#要么都成功设置，要么都失败</span>
+</span></span><span class="line"><span class="cl">getset key value <span class="c1">#如果已存在Key，先显示旧value再进行替换，如果没有则直接写入</span>
+</span></span><span class="line"><span class="cl">mset a:1:name Scan <span class="c1"># 效果如下图所示</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202407101948289.jpg" alt="VeryCapture_20240710192658" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202407101948289.jpg?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202407101948289.jpg?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202407101948289.jpg?size=large 2x" data-title="VeryCapture_20240710192658" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>键值过期</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ttl key  <span class="c1">#查询过期时间 -1永不过期  -2已过期</span>
+</span></span><span class="line"><span class="cl">expire key <span class="nb">time</span> <span class="c1">#设置key的过期时间，前提是Key已存在</span>
+</span></span><span class="line"><span class="cl">setex key <span class="nb">time</span> value <span class="c1">#设置key的过期时间，可以同时设置键值</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="hash对象" class="heading-element"><span>Hash对象</span>
+  <a href="#hash%e5%af%b9%e8%b1%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>&#x2139;&#xfe0f; 是一个String类型的field和value的映射表，适合当对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hset key field value <span class="c1"># 设置单个属性</span>
+</span></span><span class="line"><span class="cl">hmset key field value field value <span class="c1"># 设置多个属性</span>
+</span></span><span class="line"><span class="cl">hget  hgetall <span class="c1">#一个是查询单个 一个是查询所有</span>
+</span></span><span class="line"><span class="cl">hdel key field <span class="c1">#删除hash中指定的值</span>
+</span></span><span class="line"><span class="cl">hlen key <span class="c1">#获取长度</span>
+</span></span><span class="line"><span class="cl">hexists key field <span class="c1">#判断值是否存在</span>
+</span></span><span class="line"><span class="cl">hvals  <span class="c1">#获取所有值 获取所有键</span>
+</span></span><span class="line"><span class="cl">hkey  <span class="c1">#获取所有键</span>
+</span></span><span class="line"><span class="cl">hincrby key field 值 <span class="c1">#自增自减操作  填数字</span>
+</span></span><span class="line"><span class="cl">hsetnx <span class="c1">#存在则不添加</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="无序集合" class="heading-element"><span>无序集合</span>
+  <a href="#%e6%97%a0%e5%ba%8f%e9%9b%86%e5%90%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>&#x2139;&#xfe0f; 元素没有重复的，都是单个的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sadd key 元素 <span class="c1">#可添加多个元素</span>
+</span></span><span class="line"><span class="cl">scard key <span class="c1">#查看元素长度（个数）</span>
+</span></span><span class="line"><span class="cl">smembers key <span class="c1">#查看元素</span>
+</span></span><span class="line"><span class="cl">srem key member <span class="c1">#移除指定元素（可多个）</span>
+</span></span><span class="line"><span class="cl">srandmember key num <span class="c1">#随机抽取num个元素，不填写个数默认抽取一个并且不显示序号</span>
+</span></span><span class="line"><span class="cl">spop key <span class="c1">#删除随机元素</span>
+</span></span><span class="line"><span class="cl">smove key newkey value <span class="c1">#启动value到newkey</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#交集 并集 差集</span>
+</span></span><span class="line"><span class="cl">sdiff k1 k2 <span class="c1"># 求差集： k1有的元素、k2中却没有的元素</span>
+</span></span><span class="line"><span class="cl">sinter k1 k2 <span class="c1"># 求交集： k1,k2都有的元素</span>
+</span></span><span class="line"><span class="cl">sunion k1 k2 k3# 求并集<span class="o">(</span>包括重复的<span class="o">)</span>： k1 k2 k3 合起来的元素</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="有序集合" class="heading-element"><span>有序集合</span>
+  <a href="#%e6%9c%89%e5%ba%8f%e9%9b%86%e5%90%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">zadd key score value <span class="c1">#添加值、score值</span>
+</span></span><span class="line"><span class="cl">zrange key <span class="c1">#查询值</span>
+</span></span><span class="line"><span class="cl">zrangebyscore key -inf +inf <span class="c1">#根据value的score值从小到大排列</span>
+</span></span><span class="line"><span class="cl">zrevrabge key <span class="c1">#根据value的score值从大到小排列</span>
+</span></span><span class="line"><span class="cl">zrangebyscore key -inf +inf withscores <span class="c1">#查询所有的值包括key</span>
+</span></span><span class="line"><span class="cl">zcard key <span class="c1">#查询集合里的元素个数</span>
+</span></span><span class="line"><span class="cl">zrem key 元素# 移除指定元素、可多个
+</span></span><span class="line"><span class="cl">zcount key min max <span class="c1">#如果在min 或者 max 前添加 （  则为闭区间</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>同一个元素可以有多个分数，每个分数对应一个不同的排序位置</p>
+</blockquote>
+<h2 id="列表" class="heading-element"><span>列表</span>
+  <a href="#%e5%88%97%e8%a1%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lpush key value <span class="c1">#左插入数据（可以多个）</span>
+</span></span><span class="line"><span class="cl">rpush key value <span class="c1">#右插入数据（可以多个）</span>
+</span></span><span class="line"><span class="cl">lpop <span class="c1">#从最左边移除数据</span>
+</span></span><span class="line"><span class="cl">rpop <span class="c1">#从最右边移除数据</span>
+</span></span><span class="line"><span class="cl">lrange key start end  <span class="c1">#end为-1时 查所有</span>
+</span></span><span class="line"><span class="cl">lindex key <span class="m">0</span> <span class="c1">#查询指定下标元素</span>
+</span></span><span class="line"><span class="cl">llen key <span class="c1">#获取指定列表的元素长度</span>
+</span></span><span class="line"><span class="cl">lrem key 数量 value <span class="c1">#当数量为0时，删除所有value</span>
+</span></span><span class="line"><span class="cl">ltrim key start end <span class="c1">#截取元素，下标从0开始</span>
+</span></span><span class="line"><span class="cl">rpoplpush key newkey <span class="c1">#移除key的最后一个元素，到newkey里</span>
+</span></span><span class="line"><span class="cl">lset key 下标值 newvalue <span class="c1">#更新/替换 下标所在的元素 为 newvalue</span>
+</span></span><span class="line"><span class="cl">linsert key after/before value newvalue <span class="c1"># 在key的value之前或者之后 添加newvalue</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="地理位置" class="heading-element"><span>地理位置</span>
+  <a href="#%e5%9c%b0%e7%90%86%e4%bd%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>&#x2139;&#xfe0f; 有效的<strong>经度</strong>从-180度到180度，有效的<strong>纬度</strong>从-85.05112878度到85.05112878度</p>
+<p>&#x2139;&#xfe0f; 本质上是<strong>有序</strong>集合数据类型，官方做了二次包装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">geoadd 索引值 经度 纬度 地点  <span class="c1">#geoadd city 经度 维度 &#34;漂亮国&#34;</span>
+</span></span><span class="line"><span class="cl">geopos city Beijing Shanghai <span class="c1">#查看指定城市的经纬度信息，支持多个</span>
+</span></span><span class="line"><span class="cl">geodis city Beijing Shanghai <span class="o">(</span>可加单位 默认单位米<span class="o">)</span> <span class="c1"># 计算两点距离</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">georadius city 经度 纬度 距离 <span class="o">(</span>可加单位 默认单位米<span class="o">)</span> <span class="c1"># 查询指定坐标范围的城市</span>
+</span></span><span class="line"><span class="cl">		可加参数：1.withcoord <span class="c1"># 返回范围内城市的元素坐标</span>
+</span></span><span class="line"><span class="cl">				2.withdist <span class="c1">#返回与中心店的距离</span>
+</span></span><span class="line"><span class="cl">				3.count <span class="c1">#限制返回多少个城市数量</span>
+</span></span><span class="line"><span class="cl">georadiusbymember city 地点 距离 <span class="o">(</span>可加单位 默认单位米<span class="o">)</span> <span class="c1">#查询指定城市地点的范围地点城市</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="位图bitmap" class="heading-element"><span>位图(Bitmap)</span>
+  <a href="#%e4%bd%8d%e5%9b%bebitmap" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>&#x2139;&#xfe0f; 只有 <strong>0</strong>  和  <strong>1</strong>   两 个 状 态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">setbit key offset 0/1  <span class="c1">#设置值为0或1</span>
+</span></span><span class="line"><span class="cl">getbit key offset <span class="c1">#查询offset是否为1</span>
+</span></span><span class="line"><span class="cl">bitcount key <span class="c1">#默认查询多少个是1</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>在上下学、在线状态的场景下实用。</p>
+</blockquote>
+<h2 id="基数数据集" class="heading-element"><span>基数(数据集)</span>
+  <a href="#%e5%9f%ba%e6%95%b0%e6%95%b0%e6%8d%ae%e9%9b%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>&#x2139;&#xfe0f; 占用的内存是固定的，2^64个元素，相当于只需要12kb的内存即可。效率极高！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pfadd key element <span class="c1">#添加数据集</span>
+</span></span><span class="line"><span class="cl">pfcount key <span class="c1">#统计数据集的元素个数</span>
+</span></span><span class="line"><span class="cl">pfmegre k1 k2 <span class="c1">#合并并且去重</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-07-10 18:30:07">更新于 2024-07-10&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/redis/" class="post-tag" title="标签 - Redis">Redis</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/golang%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-nav-item" rel="prev" title="Golang基础学习笔记"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Golang基础学习笔记</a>
+      <a href="/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" class="post-nav-item" rel="next" title="Redis基础学习笔记（二）">Redis基础学习笔记（二）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.scan.work/"target="_blank" rel="external nofollow noopener noreferrer">Scan</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://gohugo.io/" target="_blank">由 Hugo 强力驱动</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">Running</span><span class="run-times ms-1">网站运行中……</span></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2023-05-19T19:30:34+08:00","twemoji":true,"version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script></body>
+</html>

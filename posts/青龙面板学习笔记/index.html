@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>青龙面板学习笔记 - Scan&#39;s Blog</title><meta name="author" content="Scan">
+<meta name="author-link" content="https://www.scan.work/">
+<meta name="description" content="安装、使用、拉库、配置" /><meta name="keywords" content='工具, 青龙面板' />
+  <meta itemprop="name" content="青龙面板学习笔记">
+  <meta itemprop="description" content="安装、使用、拉库、配置">
+  <meta itemprop="datePublished" content="2024-04-06T20:30:07+08:00">
+  <meta itemprop="dateModified" content="2024-04-06T20:30:07+08:00">
+  <meta itemprop="wordCount" content="193">
+  <meta itemprop="keywords" content="工具,青龙面板"><meta property="og:url" content="https://hack-scan.github.io/posts/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+  <meta property="og:site_name" content="Scan&#39;s Blog">
+  <meta property="og:title" content="青龙面板学习笔记">
+  <meta property="og:description" content="安装、使用、拉库、配置">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-06T20:30:07+08:00">
+    <meta property="article:modified_time" content="2024-04-06T20:30:07+08:00">
+    <meta property="article:tag" content="工具">
+    <meta property="article:tag" content="青龙面板">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="青龙面板学习笔记">
+  <meta name="twitter:description" content="安装、使用、拉库、配置">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://hack-scan.github.io/posts/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://hack-scan.github.io/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%BA%8C/" /><link rel="next" href="https://hack-scan.github.io/posts/python%E4%BB%A3%E7%A0%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B7%B7%E6%B7%86%E5%8E%8B%E7%BC%A9%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "青龙面板学习笔记",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/hack-scan.github.io\/posts\/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
+    },"genre": "posts","keywords": "工具, 青龙面板","wordcount":  193 ,
+    "url": "https:\/\/hack-scan.github.io\/posts\/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2024-04-06T20:30:07+08:00","dateModified": "2024-04-06T20:30:07+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Scan"
+      },"description": "安装、使用、拉库、配置"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/life/"
+                
+                
+              ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/life/"
+                  
+                  
+                ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/about/"
+                    
+                    
+                  ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>青龙面板学习笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-category" title="分类 - 自动化测试"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 自动化测试</a></span></div><div class="post-meta-line"><span title="发布于 2024-04-06 20:30:07"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-04-06">2024-04-06</time></span>&nbsp;<span title="193 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用docker安装青龙面板">使用docker安装青龙面板</a></li>
+    <li><a href="#进入容器进行操作">进入容器进行操作</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>系统环境：阿里云Linux服务器、Docker</p>
+</blockquote>
+<h1 id="青龙面板学习笔记" class="heading-element"><span>青龙面板学习笔记</span>
+  <a href="#%e9%9d%92%e9%be%99%e9%9d%a2%e6%9d%bf%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h1><h2 id="使用docker安装青龙面板" class="heading-element"><span>使用docker安装青龙面板</span>
+  <a href="#%e4%bd%bf%e7%94%a8docker%e5%ae%89%e8%a3%85%e9%9d%92%e9%be%99%e9%9d%a2%e6%9d%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker pull whyour/qinglong:latest</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行后直接启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run --name qinglong -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 5700:5700 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /opt/ql/data:/ql/data <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">QlBaseUrl</span><span class="o">=</span><span class="s2">&#34;/&#34;</span> <span class="se">\ </span><span class="c1">#设置环境变量 QlBaseUrl 和 QlPort，青龙面板服务启动时使用</span>
+</span></span><span class="line"><span class="cl">  -e <span class="nv">QlPort</span><span class="o">=</span><span class="s2">&#34;5700&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --hostname qinglong <span class="se">\ </span> <span class="c1">#设置容器主机名为 qinglong</span>
+</span></span><span class="line"><span class="cl">  --restart unless-stopped <span class="se">\ </span><span class="c1">#设置容器随docker启动自动启动</span>
+</span></span><span class="line"><span class="cl">  whyour/qinglong:latest</span></span></code></pre></td></tr></table>
+</div>
+</div><p>访问 ip:5700</p>
+<p>如果已经创建容器，没有随着docker自动启动的话就运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker ps -a
+</span></span><span class="line"><span class="cl">docker start <span class="o">[</span>容器名称/ID<span class="o">]</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>如图：
+<img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062143798.png" alt="image-20240406214313753" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062143798.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062143798.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062143798.png?size=large 2x" data-title="image-20240406214313753" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="进入容器进行操作" class="heading-element"><span>进入容器进行操作</span>
+  <a href="#%e8%bf%9b%e5%85%a5%e5%ae%b9%e5%99%a8%e8%bf%9b%e8%a1%8c%e6%93%8d%e4%bd%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>运行如下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it <span class="o">[</span>容器名<span class="o">]</span> /bin/bash</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出现<img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062126914.png" alt="image-20240406212625752" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062126914.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062126914.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062126914.png?size=large 2x" data-title="image-20240406212625752" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+内置命令有(task  ql)：</p>
+<blockquote>
+<p>task</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 依次执行，如果设置了随机延迟，将随机延迟一定秒数</span>
+</span></span><span class="line"><span class="cl">task &lt;file_path&gt;                                             
+</span></span><span class="line"><span class="cl"><span class="c1"># 依次执行，无论是否设置了随机延迟，均立即运行，前台会输出日，同时记录在日志文件中</span>
+</span></span><span class="line"><span class="cl">task &lt;file_path&gt; now                                         
+</span></span><span class="line"><span class="cl"><span class="c1"># 并发执行，无论是否设置了随机延迟，均立即运行，前台不产生日，直接记录在日志文件中，且可指定账号执行</span>
+</span></span><span class="line"><span class="cl">task &lt;file_path&gt; conc &lt;env_name&gt; &lt;account_number&gt;<span class="o">(</span>可选的<span class="o">)</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定账号执行，无论是否设置了随机延迟，均立即运行 </span>
+</span></span><span class="line"><span class="cl">task &lt;file_path&gt; desi &lt;env_name&gt; &lt;account_number&gt;      
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置任务超时时间   </span>
+</span></span><span class="line"><span class="cl">task -m &lt;max_time&gt; &lt;file_path&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 -- 分割，-- 后面的参数会传给脚本，下面的例子，脚本就可接收到参数 -u whyour -p password</span>
+</span></span><span class="line"><span class="cl">task &lt;file_path&gt; -- -u whyour -p password</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>ql</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 更新并重启青龙</span>
+</span></span><span class="line"><span class="cl">ql update
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行自定义脚本extra.sh</span>
+</span></span><span class="line"><span class="cl">ql extra
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加单个脚本文件</span>
+</span></span><span class="line"><span class="cl">ql raw &lt;file_url&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加单个仓库的指定脚本</span>
+</span></span><span class="line"><span class="cl">ql repo &lt;repo_url&gt; &lt;whitelist&gt; &lt;blacklist&gt; &lt;dependence&gt; &lt;branch&gt; &lt;extensions&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除旧日志</span>
+</span></span><span class="line"><span class="cl">ql rmlog &lt;days&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动tg-bot</span>
+</span></span><span class="line"><span class="cl">ql bot
+</span></span><span class="line"><span class="cl"><span class="c1"># 检测青龙环境并修复</span>
+</span></span><span class="line"><span class="cl">ql check
+</span></span><span class="line"><span class="cl"><span class="c1"># 重置登录错误次数</span>
+</span></span><span class="line"><span class="cl">ql resetlet                                                  
+</span></span><span class="line"><span class="cl"><span class="c1"># 禁用两步登录</span>
+</span></span><span class="line"><span class="cl">ql resettfa</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062130368.png" alt="image-20240406213020285" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062130368.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062130368.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202404062130368.png?size=large 2x" data-title="image-20240406213020285" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>more..待完善</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-04-06 20:30:07">更新于 2024-04-06&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%B7%A5%E5%85%B7/" class="post-tag" title="标签 - 工具">工具</a><a href="/tags/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/" class="post-tag" title="标签 - 青龙面板">青龙面板</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/opencv%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%BA%8C/" class="post-nav-item" rel="prev" title="OpenCV——基础笔记(二)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>OpenCV——基础笔记(二)</a>
+      <a href="/posts/python%E4%BB%A3%E7%A0%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%B7%B7%E6%B7%86%E5%8E%8B%E7%BC%A9%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-nav-item" rel="next" title="Python代码序列化混淆压缩学习记录">Python代码序列化混淆压缩学习记录<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.scan.work/"target="_blank" rel="external nofollow noopener noreferrer">Scan</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://gohugo.io/" target="_blank">由 Hugo 强力驱动</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">Running</span><span class="run-times ms-1">网站运行中……</span></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2023-05-19T19:30:34+08:00","twemoji":true,"version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script></body>
+</html>
