@@ -10,7 +10,7 @@
   <pubDate>Fri, 12 Jul 2024 15:10:07 &#43;0800</pubDate>
   <author>Scan</author>
   <guid>https://hack-scan.github.io/posts/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-  <description><![CDATA[Redis主从复制、哨兵、缓存穿透、击穿与雪崩理解学习]]></description>
+  <description><![CDATA[Redis主从复制、哨兵模式学习理解]]></description>
 </item>
 <item>
   <title>Redis基础学习笔记（二）</title>
@@ -18,7 +18,7 @@
   <pubDate>Thu, 11 Jul 2024 13:30:07 &#43;0800</pubDate>
   <author>Scan</author>
   <guid>https://hack-scan.github.io/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</guid>
-  <description><![CDATA[]]></description>
+  <description><![CDATA[Redis 事务乐观锁学习理解]]></description>
 </item>
 <item>
   <title>Redis基础学习笔记（一）</title>
@@ -26,7 +26,7 @@
   <pubDate>Wed, 10 Jul 2024 18:30:07 &#43;0800</pubDate>
   <author>Scan</author>
   <guid>https://hack-scan.github.io/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</guid>
-  <description><![CDATA[]]></description>
+  <description><![CDATA[Redis 的八种数据结构]]></description>
 </item>
 </channel>
 </rss>
