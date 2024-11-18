@@ -2,10 +2,14 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://hack-scan.github.io/categories/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
-      <loc>https://hack-scan.github.io/posts/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
-      <loc>https://hack-scan.github.io/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
-      <loc>https://hack-scan.github.io/tags/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/categories/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/categories/ida/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/posts/ida%E9%80%86%E5%90%91%E4%BD%9C%E4%B8%9A%E7%BB%83%E4%B9%A0/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/posts/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/tags/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/tags/%E9%80%86%E5%90%91/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
+      <loc>https://hack-scan.github.io/categories/%E9%80%86%E5%90%91/</loc><lastmod>2024-11-18T13:30:00&#43;08:00</lastmod></url><url>
       <loc>https://hack-scan.github.io/categories/%E7%AE%97%E6%B3%95/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
       <loc>https://hack-scan.github.io/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
       <loc>https://hack-scan.github.io/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc><lastmod>2024-11-17T13:30:00&#43;08:00</lastmod></url><url>
@@ -50,5 +54,4 @@
       <loc>https://hack-scan.github.io/posts/badusb/</loc><lastmod>2023-05-27T09:56:07&#43;08:00</lastmod></url><url>
       <loc>https://hack-scan.github.io/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/</loc><lastmod>2023-05-25T22:56:07&#43;08:00</lastmod></url><url>
       <loc>https://hack-scan.github.io/categories/%E5%B7%A5%E5%85%B7%E7%A0%B4%E8%A7%A3/%E4%BD%BF%E7%94%A8/</loc><lastmod>2023-05-25T22:56:07&#43;08:00</lastmod></url><url>
-      <loc>https://hack-scan.github.io/posts/ida%E9%80%86%E5%90%91%E4%BD%9C%E4%B8%9A%E7%BB%83%E4%B9%A0/</loc></url><url>
       <loc>https://hack-scan.github.io/projects/</loc></url></urlset>
