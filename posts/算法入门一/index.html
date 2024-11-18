@@ -11,7 +11,7 @@
   <meta itemprop="name" content="算法入门Study（一）">
   <meta itemprop="datePublished" content="2024-11-17T13:30:00+08:00">
   <meta itemprop="dateModified" content="2024-11-17T13:30:00+08:00">
-  <meta itemprop="wordCount" content="45">
+  <meta itemprop="wordCount" content="77">
   <meta itemprop="keywords" content="算法学习"><meta property="og:url" content="https://hack-scan.github.io/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80/">
   <meta property="og:site_name" content="Scan&#39;s Blog">
   <meta property="og:title" content="算法入门Study（一）">
@@ -38,7 +38,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/hack-scan.github.io\/posts\/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80\/"
-    },"genre": "posts","keywords": "算法学习, 算法学习","wordcount":  45 ,
+    },"genre": "posts","keywords": "算法学习, 算法学习","wordcount":  77 ,
     "url": "https:\/\/hack-scan.github.io\/posts\/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80\/","datePublished": "2024-11-17T13:30:00+08:00","dateModified": "2024-11-17T13:30:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -212,7 +212,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>算法入门Study（一）</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" title="分类 - 算法"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 算法</a></span></div><div class="post-meta-line"><span title="发布于 2024-11-17 13:30:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-11-17">2024-11-17</time></span>&nbsp;<span title="45 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" title="分类 - 算法"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 算法</a></span></div><div class="post-meta-line"><span title="发布于 2024-11-17 13:30:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-11-17">2024-11-17</time></span>&nbsp;<span title="77 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -225,6 +225,13 @@
         <li><a href="#11-概念">1.1 概念</a></li>
         <li><a href="#12-函数渐进界">1.2 函数渐进界</a></li>
         <li><a href="#13-常见类型">1.3 常见类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#二空间复杂度">二、空间复杂度</a>
+      <ul>
+        <li><a href="#21-概念">2.1 概念</a></li>
+        <li><a href="#22推算方法">2.2推算方法</a></li>
+        <li><a href="#23-常见类型">2.3 常见类型</a></li>
       </ul>
     </li>
   </ul>
@@ -264,7 +271,32 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>O(1) &lt;   O(logn) &lt;   O(n) &lt;   O(nlogn) &lt;   O(n<sup>2</sup>) &lt;   O (2<sup>n</sup>) &lt;   O(n!)</p>
-<p>常数阶   &lt;   对数阶   &lt;     线性阶  &lt;    线性对数阶  &lt;   平方阶    &lt;   指数阶  &lt;    阶乘阶</p></div><div class="post-footer" id="post-footer">
+<p>常数阶   &lt;   对数阶   &lt;     线性阶  &lt;    线性对数阶  &lt;   平方阶    &lt;   指数阶  &lt;    阶乘阶</p>
+<h2 id="二空间复杂度" class="heading-element"><span>二、空间复杂度</span>
+  <a href="#%e4%ba%8c%e7%a9%ba%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="21-概念" class="heading-element"><span>2.1 概念</span>
+  <a href="#21-%e6%a6%82%e5%bf%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>空间复杂度衡量算法占用内存空间<strong>随着数据量变大的增长趋势</strong></p>
+<p>算法相关空间：</p>
+<p>输入空间：输入数据</p>
+<p>暂存空间：暂存数据、栈帧空间、指令空间（统计范围）</p>
+<p>输出空间：输出数据（统计范围）</p>
+<h3 id="22推算方法" class="heading-element"><span>2.2推算方法</span>
+  <a href="#22%e6%8e%a8%e7%ae%97%e6%96%b9%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>（1）以最差输入数据为准</p>
+<p>（2）以算法运行中的峰值内存为准</p>
+<h3 id="23-常见类型" class="heading-element"><span>2.3 常见类型</span>
+  <a href="#23-%e5%b8%b8%e8%a7%81%e7%b1%bb%e5%9e%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>O(1) &lt;   O(logn) &lt;   O(n) &lt;   O(n<sup>2</sup>) &lt;   O (2<sup>n</sup>)</p>
+<p>常数阶   &lt;   对数阶   &lt;     线性阶  &lt;   平方阶    &lt;   指数阶</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
