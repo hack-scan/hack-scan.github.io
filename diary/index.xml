@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diaries on Scan&#39;s Blog</title>
+    <link>https://hack-scan.github.io/diary/</link>
+    <description>Recent content in Diaries on Scan&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>safexuan@gmail.com (Scan)</managingEditor>
+    <webMaster>safexuan@gmail.com (Scan)</webMaster>
+    <lastBuildDate>Tue, 17 Sep 2024 13:30:07 +0800</lastBuildDate>
+    <atom:link href="https://hack-scan.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>贰肆年中秋节记</title>
+      <link>https://hack-scan.github.io/diary/2024%E5%B9%B4%E4%B8%AD%E7%A7%8B%E8%8A%82%E8%AE%B0/</link>
+      <pubDate>Tue, 17 Sep 2024 13:30:07 +0800</pubDate><author>safexuan@gmail.com (Scan)</author>
+      <guid>https://hack-scan.github.io/diary/2024%E5%B9%B4%E4%B8%AD%E7%A7%8B%E8%8A%82%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

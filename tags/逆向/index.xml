@@ -4,7 +4,15 @@
     <link>https://hack-scan.github.io/tags/%E9%80%86%E5%90%91/</link>
     <description>逆向 - 标签 | Scan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
-      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Mon, 18 Nov 2024 13:30:00 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/tags/%E9%80%86%E5%90%91/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Sun, 04 May 2025 13:30:00 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/tags/%E9%80%86%E5%90%91/" rel="self" type="application/rss+xml" /><item>
+  <title>安卓某APP登陆逆向</title>
+  <link>https://hack-scan.github.io/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91/</link>
+  <pubDate>Sun, 04 May 2025 13:30:00 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>https://hack-scan.github.io/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>IDA逆向作业练习（todo_0）</title>
   <link>https://hack-scan.github.io/posts/ida%E9%80%86%E5%90%91%E4%BD%9C%E4%B8%9A%E7%BB%83%E4%B9%A0/</link>
   <pubDate>Mon, 18 Nov 2024 13:30:00 &#43;0800</pubDate>

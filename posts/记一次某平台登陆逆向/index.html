@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>安卓某APP登陆逆向 - Scan&#39;s Blog</title><meta name="author" content="Scan">
+<meta name="author-link" content="https://www.scan.work/">
+<meta name="description" content="" /><meta name="keywords" content='加密与解密, 逆向' />
+  <meta itemprop="name" content="安卓某APP登陆逆向">
+  <meta itemprop="datePublished" content="2025-05-04T13:30:00+08:00">
+  <meta itemprop="dateModified" content="2025-05-04T13:30:00+08:00">
+  <meta itemprop="wordCount" content="366">
+  <meta itemprop="keywords" content="加密与解密,逆向"><meta property="og:url" content="https://hack-scan.github.io/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91/">
+  <meta property="og:site_name" content="Scan&#39;s Blog">
+  <meta property="og:title" content="安卓某APP登陆逆向">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-04T13:30:00+08:00">
+    <meta property="article:modified_time" content="2025-05-04T13:30:00+08:00">
+    <meta property="article:tag" content="加密与解密">
+    <meta property="article:tag" content="逆向">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="安卓某APP登陆逆向">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://hack-scan.github.io/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91/" /><link rel="prev" href="https://hack-scan.github.io/posts/ida%E9%80%86%E5%90%91%E4%BD%9C%E4%B8%9A%E7%BB%83%E4%B9%A0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "安卓某APP登陆逆向",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/hack-scan.github.io\/posts\/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91\/"
+    },"genre": "posts","keywords": "加密与解密, 逆向","wordcount":  366 ,
+    "url": "https:\/\/hack-scan.github.io\/posts\/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91\/","datePublished": "2025-05-04T13:30:00+08:00","dateModified": "2025-05-04T13:30:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Scan"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/diary/"
+                
+                
+              ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Scan&#39;s Blog"><span class="header-title-text">Scan&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/diary/"
+                  
+                  
+                ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/about/"
+                    
+                    
+                  ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/projects/"
+                          title="我的作品集"
+                          
+                        ><i class="fa-solid fa-laptop-code fa-fw fa-sm" aria-hidden="true"></i> 我的作品</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>安卓某APP登陆逆向</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E9%80%86%E5%90%91/" class="post-category" title="分类 - 逆向"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 逆向</a>&ensp;<a href="/categories/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" class="post-category" title="分类 - 加密与解密"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 加密与解密</a></span></div><div class="post-meta-line"><span title="发布于 2025-05-04 13:30:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-05-04">2025-05-04</time></span>&nbsp;<span title="366 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#app抓包捕获登陆参数">APP抓包捕获登陆参数</a>
+      <ul>
+        <li><a href="#url解码获取原始结果">Url解码获取原始结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#还原加解密">还原加解密</a>
+      <ul>
+        <li><a href="#算法助手抓包获取加密参数">算法助手抓包获取加密参数</a></li>
+        <li><a href="#解密代码">解密代码</a></li>
+        <li><a href="#加密代码">加密代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#尝试还原登陆结果">尝试还原登陆结果</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="app抓包捕获登陆参数" class="heading-element"><span>APP抓包捕获登陆参数</span>
+  <a href="#app%e6%8a%93%e5%8c%85%e6%8d%95%e8%8e%b7%e7%99%bb%e9%99%86%e5%8f%82%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>因为没有网页端，只能在手机抓包或流量转发到电脑，手机Root过所以直接用手机。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">loginType=RPQQrpdg4Fes4KNvy3Y%2B%2BpOI0A%2FylWUapwSE2BvKtkzcEM8bR%2BGtScJG4ddJ8MKV%2BRHL%2BhpQG4yt%0ADq%2Ff%2FzY7P9eP%2B94EBELbYL89R7UXjw%2BRD5BPJxeoduW37iJKLV25CuDMcmHlu3Y6hYsT1NSEqXdV%0APjGDPz8mYx7e8fxB6yc%3D%0A
+</span></span><span class="line"><span class="cl">username=aNIrmXtw8nx6tVE******
+</span></span><span class="line"><span class="cl">password=X3WBkR13dBwKYc9KTYS0qgxts9O6jxhzBB%2FEB2kbKQY8VyN5g8exakcZZ64k1wKBlMit3XORAAFB%0AqHIzRb9YJoR6gsX9C2hXPmKjJcIEYHZLQE%2BjO5wT9zHF%2FZ0oUqVbREA3PiT97JwXIsd3Y8wYCTk6%0Aeq2fE6vrMr4oB2uabcY%3D%0A
+</span></span><span class="line"><span class="cl">deviceModel=bGUK%2F8im%2FzPxcVzR1lO7HxvVzxzNAnIrhwv87GqQwigL1fPVfaOBdnkYxRVkSce7UdcKFh7YLtis%0AnGzt98FD2aOxsQ3J%2FYifNAgMmaIIhA6I3vr4%2Fs2FU83NRqCghW0QRUNp28oJMvBgnUTexv4bYPmq%0AdLf7RZDF1mh0nncYVSY%3D%0A
+</span></span><span class="line"><span class="cl">devType=YcDlQYgnt0f%2FNAlEbYOKQUl9TZJD0SeR15iMoKahSu7E3Oj2549jSPwRxR3l2f11DGM2lkVLTs%2Bn%0A43WTazF3WM5pJ9n3W65TW3mc1COHzvI92WkcOAhEgol3mMi6uhdaHmQahKAd708ETv5VZvIN63Fm%0AYjMoq07ABgXG7714gIw%3D%0A
+</span></span><span class="line"><span class="cl">opertionSystem=JrVdi%2BqF1C4SsRKTDUGhhTq0ScdbynezoR2JDVXLTbaQ6cVNPl4o2z6hkhwuRjN270yM7FKucQWI%0AE2gbnvMOpqn42FIn2FIxnhW0vgUxYxRCli186XVNZ72h8eT6AlEH0KDF6dMcJ76L8VAdR5UmZMyV%0ArsVAA77uOefjy6rzKVM%3D%0A
+</span></span><span class="line"><span class="cl">ipAddress=l6zP%2FQp5sam3BIemhFGSkS7tMDzoW4OcAM6Ws%2FKdYW9yTVWzYc%2BU%2BKwdhowy1tUOXnRceLMg3D6c%0AUYo4F%2BVdqxse7i7XYoUFn%2B10qFo%2BwgaQtFnjSgqOEu4B3VYALsapRyUioarab8ZiYnotaDvxW1%2FL%0A6wGwa%2BvaeJIqH0oiXDA%3D%0A
+</span></span><span class="line"><span class="cl">devId=VdBEdtsRKLx70vdYe%2F1g******
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">loginType  		  登陆方式
+</span></span><span class="line"><span class="cl">username	  	  手机号  
+</span></span><span class="line"><span class="cl">password	      密码
+</span></span><span class="line"><span class="cl">devType	  		  手机型号
+</span></span><span class="line"><span class="cl">opertionSystem    操作系统具体版本
+</span></span><span class="line"><span class="cl">ipAddress         ip地址</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="url解码获取原始结果" class="heading-element"><span>Url解码获取原始结果</span>
+  <a href="#url%e8%a7%a3%e7%a0%81%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%a7%8b%e7%bb%93%e6%9e%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>复制下来有&quot;%&quot;，一眼就是URL，先URL解码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib.parse</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ipAddress&#34;</span><span class="p">:</span> <span class="s2">&#34;l6zP</span><span class="si">%2F</span><span class="s2">Qp5sam3BIemhFGSkS7tMDzoW4OcAM6Ws</span><span class="si">%2F</span><span class="s2">KdYW9yTVWzYc%2BU%2BKwdhowy1tUOXnRceLMg3D6c%0AUYo4F%2BVdqxse7i7XYoUFn%2B10qFo%2BwgaQtFnjSgqOEu4B3VYALsapRyUioarab8ZiYnotaDvxW1</span><span class="si">%2F</span><span class="s2">L%0A6wGwa%2BvaeJIqH0oiXDA%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 解码打印</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">decoded</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">decoded</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="还原加解密" class="heading-element"><span>还原加解密</span>
+  <a href="#%e8%bf%98%e5%8e%9f%e5%8a%a0%e8%a7%a3%e5%af%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="算法助手抓包获取加密参数" class="heading-element"><span>算法助手抓包获取加密参数</span>
+  <a href="#%e7%ae%97%e6%b3%95%e5%8a%a9%e6%89%8b%e6%8a%93%e5%8c%85%e8%8e%b7%e5%8f%96%e5%8a%a0%e5%af%86%e5%8f%82%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><!-- raw HTML omitted -->
+<p>拿到密钥开始还原加解密，但是每次加密结果是不一样的，加密算法是RSA随机填充序列，我们只有解密可以验证密钥是否可用</p>
+<h3 id="解密代码" class="heading-element"><span>解密代码</span>
+  <a href="#%e8%a7%a3%e5%af%86%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib.parse</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">PKCS1_v1_5</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64decode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 还原私钥字符串为 PEM 格式</span>
+</span></span><span class="line"><span class="cl"><span class="n">private_key_base64</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALdWyfoa5KK9tzSaHVAUOMVUx2RvuVwB+wZ3Dpa5HTIzgYE/kwImvfTVVflpC5w4qamelHiaExJoIbQBVsr1UE2WCEVyKF+fe7i4w8a2q1fMpIk1mYuvOtLtd3R5xRwAYcCekSddeChShisCS2HApMENrIQjKBAGur6cxfneBJP1AgMBAAECgYAqmaP81Vri5ao4Msc04D4AvB5InB0538vwSKG/K+w4yfcBjUAfc9kXlqqPdXUZK6FgpFRjYYmk8UVDijwclLu/pmRWXqMozlgE2Xbx+r5psxcbzXBIzeNx46eLHB6huOkttBZgknB2iKjJT/lJZ+1bPlaTxYdpmYCM20tHZKMjgQJBAOsn0l0ckRcFt+NICDdNfj+Pd14L/9Enu9aeQ81KI7L6Qygv+I1EduwY4jtub0TZy3fiyeVDwRq5Hby08hLqInkCQQDHlyPip3y9CEYSJDN5gn2aP6dzsXwHSpIYPIf2fMErZaFqvrV9in1ERzDTMT+o70kKbTsUng1pC4p8RflWUv5dAkEAs9DVmYG4qMQko1V3guJtAalw+6dtTMB3cFvBOP/SYI/iPp7ADzYlQdCdXhjKWPm6DsiK3hd7WDXpuV0cJr6G8QJAU1FWm6FLQyYXCi+uhUTh5eg4oOUwX2LTxeZO46iEgvc0APmHjdaoID6PtTnT11O8a+vZQ+wOsREuSF51jYGryQJAdglyLFsbUSMN8jdh6E0HYgYbKU5n6wnSBmLK5F81brytIbJID7bA0K5hj4TOCzjcE7VDzTCHd20sofPnU4zhFA==&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">private_key_pem</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;-----BEGIN PRIVATE KEY-----</span><span class="se">\n</span><span class="si">{</span><span class="n">private_key_base64</span><span class="si">}</span><span class="se">\n</span><span class="s2">-----END PRIVATE KEY-----&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 加载私钥</span>
+</span></span><span class="line"><span class="cl"><span class="n">rsakey</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">import_key</span><span class="p">(</span><span class="n">private_key_pem</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_v1_5</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">rsakey</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 假设 data 字典里包含了 URL 编码的数据（你提供的加密字符串）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;loginType&#34;</span><span class="p">:</span> <span class="s2">&#34;RPQQrpdg4Fes4KNvy3Y%2B%2BpOI0A</span><span class="si">%2F</span><span class="s2">ylWUapwSE2BvKtkzcEM8bR%2BGtScJG4ddJ8MKV%2BRHL%2BhpQG4yt%0ADq</span><span class="si">%2F</span><span class="s2">f</span><span class="si">%2F</span><span class="s2">zY7P9eP%2B94EBELbYL89R7UXjw%2BRD5BPJxeoduW37iJKLV25CuDMcmHlu3Y6hYsT1NSEqXdV%0APjGDPz8mYx7e8fxB6yc%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;password&#34;</span><span class="p">:</span> <span class="s2">&#34;X3WBkR13dBwKYc9KTYS0qgxts9O6jxhzBB</span><span class="si">%2F</span><span class="s2">EB2kbKQY8VyN5g8exakcZZ64k1wKBlMit3XORAAFB%0AqHIzRb9YJoR6gsX9C2hXPmKjJcIEYHZLQE%2BjO5wT9zHF</span><span class="si">%2F</span><span class="s2">Z0oUqVbREA3PiT97JwXIsd3Y8wYCTk6%0Aeq2fE6vrMr4oB2uabcY%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;deviceModel&#34;</span><span class="p">:</span> <span class="s2">&#34;bGUK</span><span class="si">%2F</span><span class="s2">8im</span><span class="si">%2F</span><span class="s2">zPxcVzR1lO7HxvVzxzNAnIrhwv87GqQwigL1fPVfaOBdnkYxRVkSce7UdcKFh7YLtis%0AnGzt98FD2aOxsQ3J</span><span class="si">%2F</span><span class="s2">YifNAgMmaIIhA6I3vr4</span><span class="si">%2F</span><span class="s2">s2FU83NRqCghW0QRUNp28oJMvBgnUTexv4bYPmq%0AdLf7RZDF1mh0nncYVSY%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;devType&#34;</span><span class="p">:</span> <span class="s2">&#34;YcDlQYgnt0f</span><span class="si">%2F</span><span class="s2">NAlEbYOKQUl9TZJD0SeR15iMoKahSu7E3Oj2549jSPwRxR3l2f11DGM2lkVLTs%2Bn%0A43WTazF3WM5pJ9n3W65TW3mc1COHzvI92WkcOAhEgol3mMi6uhdaHmQahKAd708ETv5VZvIN63Fm%0AYjMoq07ABgXG7714gIw%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;opertionSystem&#34;</span><span class="p">:</span> <span class="s2">&#34;JrVdi%2BqF1C4SsRKTDUGhhTq0ScdbynezoR2JDVXLTbaQ6cVNPl4o2z6hkhwuRjN270yM7FKucQWI%0AE2gbnvMOpqn42FIn2FIxnhW0vgUxYxRCli186XVNZ72h8eT6AlEH0KDF6dMcJ76L8VAdR5UmZMyV%0ArsVAA77uOefjy6rzKVM%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ipAddress&#34;</span><span class="p">:</span> <span class="s2">&#34;l6zP</span><span class="si">%2F</span><span class="s2">Qp5sam3BIemhFGSkS7tMDzoW4OcAM6Ws</span><span class="si">%2F</span><span class="s2">KdYW9yTVWzYc%2BU%2BKwdhowy1tUOXnRceLMg3D6c%0AUYo4F%2BVdqxse7i7XYoUFn%2B10qFo%2BwgaQtFnjSgqOEu4B3VYALsapRyUioarab8ZiYnotaDvxW1</span><span class="si">%2F</span><span class="s2">L%0A6wGwa%2BvaeJIqH0oiXDA%3D%0A&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 循环解密并打印每个字段</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 1. URL 解码</span>
+</span></span><span class="line"><span class="cl">    <span class="n">decoded_value</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 2. Base64 解码</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cipher_text</span> <span class="o">=</span> <span class="n">b64decode</span><span class="p">(</span><span class="n">decoded_value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 3. 解密</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sentinel</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;error&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">decrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">cipher_text</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 4. 打印解密结果</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">decrypted</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">loginType = 2
+</span></span></span><span class="line"><span class="cl"><span class="s2">password = 123456
+</span></span></span><span class="line"><span class="cl"><span class="s2">deviceModel = realme RMX3562
+</span></span></span><span class="line"><span class="cl"><span class="s2">devType = Android
+</span></span></span><span class="line"><span class="cl"><span class="s2">opertionSystem = Android 12,Version:2.5.6
+</span></span></span><span class="line"><span class="cl"><span class="s2">ipAddress = 127.0.0.1
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>之前这个站有任意文件下载漏洞，所以把打包的源码下载到本地过，我们查看一下反编译的Class</p>
+<p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051149414.png" alt="image-20250505114930388" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051149414.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051149414.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051149414.png?size=large 2x" data-title="image-20250505114930388" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>有私钥公钥且私钥与算法助手获取的一致，审计源码可知，都是公钥加密，私钥解密的。</p>
+<h3 id="加密代码" class="heading-element"><span>加密代码</span>
+  <a href="#%e5%8a%a0%e5%af%86%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">PKCS1_v1_5</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64decode</span><span class="p">,</span> <span class="n">b64encode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 你的私钥和公钥（Base64 格式）</span>
+</span></span><span class="line"><span class="cl"><span class="n">private_key_b64</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALdWyfoa5KK9tzSaHVAUOMVUx2RvuVwB+wZ3Dpa5HTIzgYE/kwImvfTVVflpC5w4qamelHiaExJoIbQBVsr1UE2WCEVyKF+fe7i4w8a2q1fMpIk1mYuvOtLtd3R5xRwAYcCekSddeChShisCS2HApMENrIQjKBAGur6cxfneBJP1AgMBAAECgYAqmaP81Vri5ao4Msc04D4AvB5InB0538vwSKG/K+w4yfcBjUAfc9kXlqqPdXUZK6FgpFRjYYmk8UVDijwclLu/pmRWXqMozlgE2Xbx+r5psxcbzXBIzeNx46eLHB6huOkttBZgknB2iKjJT/lJZ+1bPlaTxYdpmYCM20tHZKMjgQJBAOsn0l0ckRcFt+NICDdNfj+Pd14L/9Enu9aeQ81KI7L6Qygv+I1EduwY4jtub0TZy3fiyeVDwRq5Hby08hLqInkCQQDHlyPip3y9CEYSJDN5gn2aP6dzsXwHSpIYPIf2fMErZaFqvrV9in1ERzDTMT+o70kKbTsUng1pC4p8RflWUv5dAkEAs9DVmYG4qMQko1V3guJtAalw+6dtTMB3cFvBOP/SYI/iPp7ADzYlQdCdXhjKWPm6DsiK3hd7WDXpuV0cJr6G8QJAU1FWm6FLQyYXCi+uhUTh5eg4oOUwX2LTxeZO46iEgvc0APmHjdaoID6PtTnT11O8a+vZQ+wOsREuSF51jYGryQJAdglyLFsbUSMN8jdh6E0HYgYbKU5n6wnSBmLK5F81brytIbJID7bA0K5hj4TOCzjcE7VDzTCHd20sofPnU4zhFA==
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">public_key_b64</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3Vsn6GuSivbc0mh1QFDjFVMdkb7lcAfsGdw6WuR0yM4GBP5MCJr301VX5aQucOKmpnpR4mhMSaCG0AVbK9VBNlghFcihfn3u4uMPGtqtXzKSJNZmLrzrS7Xd0ecUcAGHAnpEnXXgoUoYrAkthwKTBDayEIygQBrq+nMX53gST9QIDAQAB
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成私钥和公钥对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">private_key</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">importKey</span><span class="p">(</span><span class="n">b64decode</span><span class="p">(</span><span class="n">private_key_b64</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">public_key</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">importKey</span><span class="p">(</span><span class="n">b64decode</span><span class="p">(</span><span class="n">public_key_b64</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt_with_public_key</span><span class="p">(</span><span class="n">plain_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_v1_5</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">public_key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">plain_text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">decrypt_with_private_key</span><span class="p">(</span><span class="n">cipher_text_b64</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_v1_5</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">private_key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">encrypted_bytes</span> <span class="o">=</span> <span class="n">b64decode</span><span class="p">(</span><span class="n">cipher_text_b64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sentinel</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;error&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">decrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">encrypted_bytes</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">decrypted</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plain</span> <span class="o">=</span> <span class="s2">&#34;scan.work&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">enc</span> <span class="o">=</span> <span class="n">encrypt_with_public_key</span><span class="p">(</span><span class="n">plain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dec</span> <span class="o">=</span> <span class="n">decrypt_with_private_key</span><span class="p">(</span><span class="n">enc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;原文:&#34;</span><span class="p">,</span> <span class="n">plain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;加密后:&#34;</span><span class="p">,</span> <span class="n">enc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;解密后:&#34;</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="尝试还原登陆结果" class="heading-element"><span>尝试还原登陆结果</span>
+  <a href="#%e5%b0%9d%e8%af%95%e8%bf%98%e5%8e%9f%e7%99%bb%e9%99%86%e7%bb%93%e6%9e%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051205881.png" alt="image-20250505120546842" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051205881.png?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051205881.png?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505051205881.png?size=large 2x" data-title="image-20250505120546842" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>成功获取Token</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-05-04 13:30:00">更新于 2025-05-04&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" class="post-tag" title="标签 - 加密与解密">加密与解密</a><a href="/tags/%E9%80%86%E5%90%91/" class="post-tag" title="标签 - 逆向">逆向</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/ida%E9%80%86%E5%90%91%E4%BD%9C%E4%B8%9A%E7%BB%83%E4%B9%A0/" class="post-nav-item" rel="prev" title="IDA逆向作业练习（todo_0）"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>IDA逆向作业练习（todo_0）</a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://www.scan.work/"target="_blank" rel="external nofollow noopener noreferrer">Scan</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://gohugo.io/" target="_blank">由 Hugo 强力驱动</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">Running</span><span class="run-times ms-1">网站运行中……</span></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"siteTime":"2023-05-19T19:30:34+08:00","twemoji":true,"version":"v0.3.7"};</script><script src="/js/theme.min.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script></body>
+</html>
