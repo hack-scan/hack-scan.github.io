@@ -5,42 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Elasticsearch学习记录 - Scan&#39;s Blog</title><meta name="author" content="Scan">
+    <title> - Scan&#39;s Blog</title><meta name="author" content="Scan">
 <meta name="author-link" content="https://www.scan.work/">
-<meta name="description" content="" /><meta name="keywords" content='数据库, elasticsearch' />
-  <meta itemprop="name" content="elasticsearch学习记录">
-  <meta itemprop="datePublished" content="2025-05-20T13:30:00+08:00">
-  <meta itemprop="dateModified" content="2025-05-20T13:30:00+08:00">
-  <meta itemprop="wordCount" content="107">
-  <meta itemprop="keywords" content="数据库,Elasticsearch"><meta property="og:url" content="http://localhost:1313/posts/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+<meta name="description" content="Elasticsearch学习记录安装elasticsearch和kibana1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:8.13.2 platform: linux/amd64 container_name: es environment: - discovery.type=single-node - xpack.security.enabled=false #关闭密码认证（只在测试环境下运行） ports: - &#34;9200:9200&#34; networks: - es-net kibana: #可视化工具 image: docker.elastic.co/kibana/kibana:8.13.2 platform: linux/amd64 container_name: kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - &#34;5601:5601&#34; depends_on: - elasticsearch networks: - es-net networks: es-net: 启动:" />
+  <meta itemprop="name" content="Scan&#39;s Blog">
+  <meta itemprop="description" content="Elasticsearch学习记录安装elasticsearch和kibana1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:8.13.2 platform: linux/amd64 container_name: es environment: - discovery.type=single-node - xpack.security.enabled=false #关闭密码认证（只在测试环境下运行） ports: - &#34;9200:9200&#34; networks: - es-net kibana: #可视化工具 image: docker.elastic.co/kibana/kibana:8.13.2 platform: linux/amd64 container_name: kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - &#34;5601:5601&#34; depends_on: - elasticsearch networks: - es-net networks: es-net: 启动:">
+  <meta itemprop="wordCount" content="108"><meta property="og:url" content="http://localhost:1313/posts/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
   <meta property="og:site_name" content="Scan&#39;s Blog">
-  <meta property="og:title" content="elasticsearch学习记录">
+  <meta property="og:title" content="Scan&#39;s Blog">
+  <meta property="og:description" content="Elasticsearch学习记录安装elasticsearch和kibana1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:8.13.2 platform: linux/amd64 container_name: es environment: - discovery.type=single-node - xpack.security.enabled=false #关闭密码认证（只在测试环境下运行） ports: - &#34;9200:9200&#34; networks: - es-net kibana: #可视化工具 image: docker.elastic.co/kibana/kibana:8.13.2 platform: linux/amd64 container_name: kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - &#34;5601:5601&#34; depends_on: - elasticsearch networks: - es-net networks: es-net: 启动:">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-05-20T13:30:00+08:00">
-    <meta property="article:modified_time" content="2025-05-20T13:30:00+08:00">
-    <meta property="article:tag" content="数据库">
-    <meta property="article:tag" content="Elasticsearch">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="elasticsearch学习记录">
+  <meta name="twitter:title" content="Scan&#39;s Blog">
+  <meta name="twitter:description" content="Elasticsearch学习记录安装elasticsearch和kibana1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 services: elasticsearch: image: docker.elastic.co/elasticsearch/elasticsearch:8.13.2 platform: linux/amd64 container_name: es environment: - discovery.type=single-node - xpack.security.enabled=false #关闭密码认证（只在测试环境下运行） ports: - &#34;9200:9200&#34; networks: - es-net kibana: #可视化工具 image: docker.elastic.co/kibana/kibana:8.13.2 platform: linux/amd64 container_name: kibana environment: - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 ports: - &#34;5601:5601&#34; depends_on: - elasticsearch networks: - es-net networks: es-net: 启动:">
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><link rel="prev" href="http://localhost:1313/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><link rel="next" href="http://localhost:1313/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "elasticsearch学习记录",
+    "headline": "",
     "inLanguage": "zh-cn",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/posts\/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/"
-    },"genre": "posts","keywords": "数据库, elasticsearch","wordcount":  107 ,
-    "url": "http:\/\/localhost:1313\/posts\/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/","datePublished": "2025-05-20T13:30:00+08:00","dateModified": "2025-05-20T13:30:00+08:00","publisher": {
+    },"genre": "posts","wordcount":  108 ,
+    "url": "http:\/\/localhost:1313\/posts\/elasticsearch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -80,7 +76,7 @@
               ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
               <a
                 class="menu-link"
-                href="/diary/"
+                href="/life/"
                 
                 
               ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li class="menu-item has-children">
@@ -174,7 +170,7 @@
               class="menu-item"
             ><a
                   class="menu-link"
-                  href="/diary/"
+                  href="/life/"
                   
                   
                 ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li
@@ -211,9 +207,9 @@
   </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Elasticsearch学习记录</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span></span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/elasticsearch/" class="post-category" title="分类 - Elasticsearch"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Elasticsearch</a>&ensp;<a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category" title="分类 - 数据库"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数据库</a></span></div><div class="post-meta-line"><span title="发布于 2025-05-20 13:30:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-05-20">2025-05-20</time></span>&nbsp;<span title="107 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://www.scan.work/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/logo.png?size=large" alt="Scan" data-title="Scan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Scan</a></span></div><div class="post-meta-line"><span title="发布于 0001-01-01 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="0001-01-01">0001-01-01</time></span>&nbsp;<span title="108 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -221,7 +217,7 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#elasticsearch学习记录">Elasticsearch学习记录</a>
       <ul>
         <li><a href="#安装elasticsearch和kibana">安装elasticsearch和kibana</a></li>
         <li><a href="#kibana运行查询等命令">Kibana运行查询等命令：</a></li>
@@ -229,7 +225,11 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h3 id="安装elasticsearch和kibana" class="heading-element"><span>安装elasticsearch和kibana</span>
+      </div><div class="content" id="content"><h2 id="elasticsearch学习记录" class="heading-element"><span>Elasticsearch学习记录</span>
+  <a href="#elasticsearch%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="安装elasticsearch和kibana" class="heading-element"><span>安装elasticsearch和kibana</span>
   <a href="#%e5%ae%89%e8%a3%85elasticsearch%e5%92%8ckibana" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -355,11 +355,12 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">/_cat/indices?v</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif" alt="May-18-2025 14-45-09" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif?size=large 2x" data-title="May-18-2025 14-45-09" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p></div><div class="post-footer" id="post-footer">
+</div><p><img loading="lazy" src="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif" alt="May-18-2025 14-45-09" srcset="https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif?size=small, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif?size=medium 1.5x, https://fastly.jsdelivr.net/gh/hack-scan/Blog-pic/posts/202505181445444.gif?size=large 2x" data-title="May-18-2025 14-45-09" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+</div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2025-05-20 13:30:00">更新于 2025-05-20&nbsp;</span>
+        <span title="更新于 0001-01-01 00:00:00">更新于 0001-01-01&nbsp;</span>
       </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
@@ -368,13 +369,14 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-tag" title="标签 - 数据库">数据库</a><a href="/tags/elasticsearch/" class="post-tag" title="标签 - Elasticsearch">Elasticsearch</a></section>
+    <section class="post-tags"></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%9F%90%E5%B9%B3%E5%8F%B0%E7%99%BB%E9%99%86%E9%80%86%E5%90%91/" class="post-nav-item" rel="prev" title="安卓某APP登陆逆向"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>安卓某APP登陆逆向</a></div>
+  <div class="post-nav">
+      <a href="/posts/typora%E7%A0%B4%E8%A7%A3%E4%BD%BF%E7%94%A8/" class="post-nav-item" rel="next" title="Markdown编辑器——Typora破解版">Markdown编辑器——Typora破解版<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -13,7 +13,7 @@
   <meta itemprop="datePublished" content="2024-07-12T15:10:07+08:00">
   <meta itemprop="dateModified" content="2024-07-12T15:10:07+08:00">
   <meta itemprop="wordCount" content="131">
-  <meta itemprop="keywords" content="Redis"><meta property="og:url" content="https://hack-scan.github.io/posts/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+  <meta itemprop="keywords" content="Redis"><meta property="og:url" content="http://localhost:1313/posts/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="Scan&#39;s Blog">
   <meta property="og:title" content="Redis进阶学习笔记">
   <meta property="og:description" content="Redis主从复制、哨兵模式学习理解">
@@ -30,7 +30,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://hack-scan.github.io/posts/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://hack-scan.github.io/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" /><link rel="next" href="https://hack-scan.github.io/diary/2024%E5%B9%B4%E4%B8%AD%E7%A7%8B%E8%8A%82%E8%AE%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="http://localhost:1313/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -40,9 +40,9 @@
     "inLanguage": "zh-cn",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/hack-scan.github.io\/posts\/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
+      "@id": "http:\/\/localhost:1313\/posts\/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
     },"genre": "posts","keywords": "Redis","wordcount":  131 ,
-    "url": "https:\/\/hack-scan.github.io\/posts\/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2024-07-12T15:10:07+08:00","dateModified": "2024-07-12T15:10:07+08:00","publisher": {
+    "url": "http:\/\/localhost:1313\/posts\/redis%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2024-07-12T15:10:07+08:00","dateModified": "2024-07-12T15:10:07+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -82,7 +82,7 @@
               ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
               <a
                 class="menu-link"
-                href="/diary/"
+                href="/life/"
                 
                 
               ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li class="menu-item has-children">
@@ -176,7 +176,7 @@
               class="menu-item"
             ><a
                   class="menu-link"
-                  href="/diary/"
+                  href="/life/"
                   
                   
                 ><i class="fa-solid fa-camera-alt fa-fw fa-sm" aria-hidden="true"></i> 生活</a></li><li
@@ -398,8 +398,7 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" class="post-nav-item" rel="prev" title="Redis基础学习笔记（二）"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Redis基础学习笔记（二）</a>
-      <a href="/posts/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%80/" class="post-nav-item" rel="next" title="算法入门Study（一）">算法入门Study（一）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" class="post-nav-item" rel="prev" title="Redis基础学习笔记（二）"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Redis基础学习笔记（二）</a></div>
 </div>
 </article>
 

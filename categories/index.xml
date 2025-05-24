@@ -1,87 +1,79 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Categories - 分类 - Scan&#39;s Blog</title>
-    <link>https://hack-scan.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Categories - 分类 | Scan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>safexuan@gmail.com (Scan)</managingEditor>
-      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Sun, 04 May 2025 13:30:00 &#43;0800</lastBuildDate><atom:link href="https://hack-scan.github.io/categories/" rel="self" type="application/rss+xml" /><item>
-  <title>加密与解密</title>
-  <link>https://hack-scan.github.io/categories/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</link>
-  <pubDate>Sun, 04 May 2025 13:30:00 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>逆向</title>
-  <link>https://hack-scan.github.io/categories/%E9%80%86%E5%90%91/</link>
-  <pubDate>Sun, 04 May 2025 13:30:00 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/%E9%80%86%E5%90%91/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>IDA</title>
-  <link>https://hack-scan.github.io/categories/ida/</link>
-  <pubDate>Mon, 18 Nov 2024 13:30:00 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/ida/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>算法</title>
-  <link>https://hack-scan.github.io/categories/%E7%AE%97%E6%B3%95/</link>
-  <pubDate>Sun, 17 Nov 2024 13:30:00 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Diary</title>
-  <link>https://hack-scan.github.io/categories/diary/</link>
-  <pubDate>Tue, 17 Sep 2024 13:30:07 &#43;0800</pubDate>
-  <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/diary/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
+      <webMaster>safexuan@gmail.com (Scan)</webMaster><lastBuildDate>Fri, 12 Jul 2024 15:10:07 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
   <title>Redis</title>
-  <link>https://hack-scan.github.io/categories/redis/</link>
+  <link>http://localhost:1313/categories/redis/</link>
   <pubDate>Fri, 12 Jul 2024 15:10:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/redis/</guid>
+  <guid>http://localhost:1313/categories/redis/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Golang</title>
-  <link>https://hack-scan.github.io/categories/golang/</link>
+  <link>http://localhost:1313/categories/golang/</link>
   <pubDate>Tue, 18 Jun 2024 18:30:07 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/golang/</guid>
+  <guid>http://localhost:1313/categories/golang/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Linux</title>
-  <link>https://hack-scan.github.io/categories/linux/</link>
+  <link>http://localhost:1313/categories/linux/</link>
   <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/linux/</guid>
+  <guid>http://localhost:1313/categories/linux/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>自动化测试</title>
-  <link>https://hack-scan.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+  <link>http://localhost:1313/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
   <pubDate>Thu, 16 May 2024 14:00:00 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+  <guid>http://localhost:1313/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Python</title>
-  <link>https://hack-scan.github.io/categories/python/</link>
+  <link>http://localhost:1313/categories/python/</link>
   <pubDate>Wed, 15 May 2024 12:00:00 &#43;0800</pubDate>
   <author>Scan</author>
-  <guid>https://hack-scan.github.io/categories/python/</guid>
+  <guid>http://localhost:1313/categories/python/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>加密与解密</title>
+  <link>http://localhost:1313/categories/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</link>
+  <pubDate>Wed, 15 May 2024 12:00:00 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>http://localhost:1313/categories/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>深度学习</title>
+  <link>http://localhost:1313/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+  <pubDate>Sun, 23 Jul 2023 18:10:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>http://localhost:1313/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>近源渗透</title>
+  <link>http://localhost:1313/categories/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/</link>
+  <pubDate>Sat, 27 May 2023 09:56:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>http://localhost:1313/categories/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>工具破解/使用</title>
+  <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E7%A0%B4%E8%A7%A3/%E4%BD%BF%E7%94%A8/</link>
+  <pubDate>Thu, 25 May 2023 22:56:07 &#43;0800</pubDate>
+  <author>Scan</author>
+  <guid>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E7%A0%B4%E8%A7%A3/%E4%BD%BF%E7%94%A8/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>
